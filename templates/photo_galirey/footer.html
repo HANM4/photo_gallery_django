@@ -1,0 +1,77 @@
+{% load static %}
+<footer class="">
+    <div class=" w-full bg-cover bg-center" style="background-image: url({% static 'photo_galirey/img/background_image_footer.png' %})">
+         <div class="px py-24 mx-auto max-w-7xl flex justify-between">
+             <a class="font-medium cursor-pointer" href="{% url 'home' %}">
+                <span class="text-[25px] font-italictext">Disipion Salinia</span>
+            </a>
+            <div>
+                <span class="font-semibold text-lg mb-3 block">Меню</span>
+                <ul>
+                    {% for key, val in menu.items %}
+                    <li class="mb-2">
+                        <a href="{% url val %}" class="cursor-pointer">{{ key }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div>
+                <span class="font-semibold text-lg mb-3 block">Социальные сети</span>
+                <div class="flex mb-2 ">
+                    <a href=""><img src="{% static 'photo_galirey/img/vk_icon.svg' %}" alt="vk" class="pr-2"></a>
+                    <a href=""><img src="{% static 'photo_galirey/img/facebook_icon.svg' %}" alt="facebook"></a>
+                </div>
+                <a href=""><span>@dmitrirocit</span></a>
+                <div class="grid grid-cols-3 ">
+                    <a href=""><img src="{% static 'photo_galirey/img/inst_img_1.png' %}" alt="пост из instagram 1"></a>
+                    <a href=""><img src="{% static 'photo_galirey/img/inst_img_2.png' %}" alt="пост из instagram 2"></a>
+                    <a href=""><img src="{% static 'photo_galirey/img/inst_img_3.png' %}" alt="пост из instagram 3"></a>
+                    <a href=""><img src="{% static 'photo_galirey/img/inst_img_4.png' %}" alt="пост из instagram 4"></a>
+                    <a href=""><img src="{% static 'photo_galirey/img/inst_img_5.png' %}" alt="пост из instagram 5"></a>
+                    <a href=""><img src="{% static 'photo_galirey/img/inst_img_6.png' %}" alt="пост из instagram 6"></a>
+                </div>
+            </div>
+            <div>
+                <span class="block font-semibold text-lg mb-3">Контакты</span>
+                <div class="flex mb-2">
+                    <img src="{% static 'photo_galirey/img/phone_icon.svg' %}" alt="телефон" class="pr-2">
+                    <span>+8 900 341-24-49</span>
+                </div>
+                <div class="flex mb-2">
+                    <img src="{% static 'photo_galirey/img/phone_icon.svg' %}" alt="телефон" class="pr-2">
+                    <span>+8 900 341-24-49</span>
+                </div>
+                <div class="flex mb-2">
+                    <img src="{% static 'photo_galirey/img/email_icon.svg' %}" alt="телефон" class="pr-2">
+                    <span>gmadfdji@gmail.com</span>
+                </div>
+                <div class="flex mb-2">
+                    <img src="{% static 'photo_galirey/img/map.svg' %}" alt="телефон" class="pr-2">
+                    <span>г. Москва ул. Парковая 2-я</span>
+                </div>
+            </div>
+         </div>
+        <div class="bg-black/[.65] text-white flex-col flexmx-auto py-5 justify-center">
+            <div class="flex justify-center">
+                <div class="w-[490px] mr-8">
+                    <h2 class="text-xl mb-2">Заказать звонок</h2>
+                    <text class="">Таким образом начало повседневной работы по формированию позиции способствует подготовки и реализации направлений прогрессивного развития.</text>
+                </div>
+                <form action="" class="flex justify-arow mt-[46px]">
+                    <input type="text" placeholder="Ваш номер телефона" class="h-[2.7rem] w-[14rem] mr-1 pl-4 border-2 border-[#F5EEEB] bg-transparent text-[#F5EEEB] placeholder:text-[#F5EEEB]">
+                    <button class="h-[2.7rem] bg-[#C08267] flex justify-center items-center px-3">Заказать звонок</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex my-3 px-5 justify-center text-black">
+        <span class=" sm:mt-0 mt-2 text-center text-sm">Сайт создан pannnikof.ru</span>
+        <p class=" text-sm text-center">dmitrirocit © 2020 Все права защищены</p>
+    </div>
+
+</footer>
+
+
+</body>
+</html>

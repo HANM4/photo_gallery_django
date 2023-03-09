@@ -1,0 +1,69 @@
+{% load static %}
+{% include 'photo_galirey/header_galirey_min.html' %}
+<section class="flex-col px-2 py-24 mx-auto max-w-7xl">
+    <div class="flex justify-center">
+        <div class="flex flex-col mr-[300px]">
+            <div class="mb-[20px] flex flex-col">
+                <span class="text-[#C08267] mb-[12px]">Электронная почта</span>
+                <span>gmadfdji@gmail.com</span>
+            </div>
+            <div class="mb-[20px] flex flex-col">
+                <span class="text-[#C08267] mb-[12px]">Whatsapp, Viber, Telegram</span>
+                <span>+8 900 341-24-49</span>
+            </div>
+            <div class="flex flex-col mb-[20px]">
+                <span class="text-[#C08267] mb-[12px]">Телефон</span>
+                <span class="mb-[12px]">+8 900 341-24-49</span>
+                <span>+8 900 341-24-49</span>
+            </div>
+        </div>
+        <div class="w-[40%]">
+            <form class="flex flex-col">
+                <input type="phone" placeholder="Телефон / Phone" class="bg-white border-[#212123]/[.70] border-2 mb-[15px] px-[30px] pt-[13px] pb-[12px]">
+                <input type="text" placeholder="Имя / Name" class="bg-white border-[#212123]/[.70] border-2 mb-[15px] px-[30px] pt-[13px] pb-[12px]">
+                <textarea  type="text" placeholder="Сообщение  /  Message" class="bg-white border-[#212123]/[.70] border-2 mb-[15px] px-[30px] pt-[13px] pb-[12px] h-[170px]"></textarea>
+                <button class="border-[#C08267] border-2 text-[#C08267] px-[18px] pt-[11px] pb-[12px] w-fit mx-auto">Заказать звонок</button>
+            </form>
+        </div>
+    </div>
+    <div class="flex justify-center mt-[80px]">
+        <img src="{% static 'photo_galirey/img/vk_contact_icon.svg' %}" alt="" class="mr-[15px]">
+        <img src="{% static 'photo_galirey/img/facebook_contact_icon.svg' %}" alt="" class="mr-[15px]">
+        <img src="{% static 'photo_galirey/img/inst_contact_icon.svg' %}" alt="">
+    </div>
+</section>
+<section>
+    <div class="relative">
+        <span>
+            <img src="{% static 'photo_galirey/img/map_point.svg' %}" alt="" class="cursor-pointer absolute top-[30%] left-[40%] w-[50px] hover:w-[60px] hover:-translate-x-[5px] hover:-translate-y-[10px]">
+        </span>
+        <img src="{% static 'photo_galirey/img/map.png' %}" alt="" class="h-[650px] object-cover">
+        <div class="shadow-lg absolute top-[30%] left-[45%] bg-white p-[60px]">
+            <img src="{% static 'photo_galirey/img/close_icon.svg' %}" alt="" class="absolute top-[20px] right-[20px] cursor-pointer">
+            <div class="">
+                <div class="flex mb-[15px]">
+                    <img src="{% static 'photo_galirey/img/map.svg' %}" alt="" class="mr-[10px]">
+                    <span>Гельсинфорская ул. г. Москва</span>
+                </div>
+                <div class="mb-[15px]">
+                    <div class="flex mb-[5px]">
+                        <img src="{% static 'photo_galirey/img/phone_icon.svg' %}" alt="" class="mr-[8px] ml-[4px]">
+                        <span>+8 900 341-24-49</span>
+                    </div>
+                    <div class="flex">
+                        <img src="{% static 'photo_galirey/img/phone_icon.svg' %}" alt="" class="mr-[8px] ml-[4px]">
+                        <span>+8 900 341-24-49</span>
+                    </div>
+                </div>
+                <div class="flex flex-col mb-[15px]">
+                    <span class="mb-[5px]">Пн-Сб с 9:20 до 21:00</span>
+                    <span>Вс с 10:00 до 18:00</span>
+                </div>
+                <a class="text-[#C08267] underline" href="https://yandex.ru/maps/?um=constructor%3Ae44e0bbc1db7b450808097871217c51819b7310869f60e3342b92189168e2377&amp;source=constructorStatic" target="_blank">
+                    Показать на Яндекс карте
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% include  'photo_galirey/footer.html' %}
