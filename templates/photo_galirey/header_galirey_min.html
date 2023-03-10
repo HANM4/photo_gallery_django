@@ -7,7 +7,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Dancing+Script:wght@700&family=Yeseva+One&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>
+        {% if gallery %}
+            {{ gallery.name_work }}
+        {% else %}
+            {{ menu_activ }}
+        {% endif %}
+    </title>
 </head>
 <body>
 
@@ -31,7 +37,15 @@
             </div>
             <div class="flex flex-col w-full items-center text-white absolute top-[45%] z-[30]">
                 <span class="text-6xl font-['Yeseva_One']">Данил Салиния</span>
-                <h1 class="mt-2 mt-3 font-['Comfortaa']">Портфолио</h1>
+                <span class="mt-2 mt-3 flex">
+                    {% if gallery %}
+                        <a href="{% url page_name %}"><span class="cursor-pointer">{{ menu_activ }}</span></a>
+                        <span class="mx-[5px]"> > </span>
+                        <h1 class="font-['Comfortaa'] cursor-pointer" >{{ gallery.name_work }}</h1>
+                    {% else %}
+                    <a href="{% url page_name %}"><h1 class="font-['Comfortaa'] cursor-pointer"> {{ menu_activ }} </h1></a>
+                    {% endif %}
+                </span>
             </div>
             <div class="bg-[#212123]/[.75]  w-[100%] absolute top-0 z-[20] h-[100vh]"></div>
             <video src="{% static 'photo_galirey/video/background_video.mp4' %}" poster="{% static 'photo_galirey/img/background_image_header_galirey.png' %}" muted loop autoplay class="w-[100%] h-[100%] absolute top-0 object-cover"></video>
