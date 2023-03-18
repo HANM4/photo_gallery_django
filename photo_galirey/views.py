@@ -23,7 +23,6 @@ def index(request):
 
 
 def gallery(request):
-
     data = {
         "hashtags_name": hashtags_name_db,
         "gallery": gallery_db,
@@ -31,7 +30,6 @@ def gallery(request):
         "menu": MENU
     }
     data["page_name"] = data["menu"][data["menu_activ"]]
-    print(data)
     return render(request, 'photo_galirey/galirey.html', context=data)
 
 
@@ -43,13 +41,15 @@ def gallery_int(request, gallery_id):
         "imgs_gallery": imgs_gallery_db.filter(gallery=gallery_id)
     }
     data["page_name"] = data["menu"][data["menu_activ"]]
+    data["slider_long"] = len(data["imgs_gallery"])
+    print(data['imgs_gallery'])
     return render(request, 'photo_galirey/gallery_int.html', context=data)
 
 
 def review(request):
     data = {
         "menu_activ": "Отзывы",
-        "menu": MENU
+        "menu": MENU,
     }
     data["page_name"] = data["menu"][data["menu_activ"]]
     return render(request, 'photo_galirey/review.html', context=data)
