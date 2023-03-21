@@ -3,4 +3,4 @@ from django.contrib import admin
 from .models import *
 
 
-admin.site.register([Gallery, Img, Hashtags, HashtagsName])
+admin.site.register([Gallery, Img, Hashtags, HashtagsName, Services, SpecificsServices, FAQ])

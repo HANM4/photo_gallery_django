@@ -5,6 +5,9 @@ from .models import *
 hashtags_name_db = HashtagsName.objects.all()
 gallery_db = Gallery.objects.all()
 imgs_gallery_db = Img.objects.all()
+services_db = Services.objects.all()
+specifics_services_db = SpecificsServices.objects.all()
+faq_db = FAQ.objects.all()
 
 MENU = {
     'Главная': 'home',
@@ -17,7 +20,10 @@ MENU = {
 def index(request):
     data = {
         "menu_activ": "Главная",
-        "menu": MENU
+        "menu": MENU,
+        "specifics_services": specifics_services_db,
+        "services": services_db,
+        "faq": faq_db
     }
     return render(request, 'photo_galirey/index.html', context=data)
 
@@ -41,8 +47,6 @@ def gallery_int(request, gallery_id):
         "imgs_gallery": imgs_gallery_db.filter(gallery=gallery_id)
     }
     data["page_name"] = data["menu"][data["menu_activ"]]
-    data["slider_long"] = len(data["imgs_gallery"])
-    print(data['imgs_gallery'])
     return render(request, 'photo_galirey/gallery_int.html', context=data)
 
 

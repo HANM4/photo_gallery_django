@@ -1,3 +1,4 @@
+{% load humanize %}
 {% load static %}
 {% include  'photo_galirey/header_index.html' %}
 <section class="flex px-2 pt-24 mx-auto max-w-7xl justify-between items-center">
@@ -46,83 +47,58 @@
 
 <section class="pt-24">
     <h2 class="mb-6 text-[30px] mx-auto px-2 max-w-7xl">Услуги</h2>
-    <div>
-        <div class="bg-center bg-cover" style="background-image: url({% static 'photo_galirey/img/img_zaglushka_yslygi.png' %})">
-            <span class="h-[1px] w-full bg-[#212123]/[.30] block"></span>
+    {% for i in services %}
+    <div class="border-t-[1px] border-solid border-[#212123]/[.30]">
+        <div class="bg-center bg-cover services_list_unactiv" style="background-image: url({{ i.img_background_services.url }})" data-index="{{ i.pk }}">
             <div class="bg-white/[.88] py-[15px]">
                 <div class="mx-auto px-[38px] max-w-7xl flex justify-between">
-                    <h3 class="text-[20px]">Тариф “1”</h3>
-                    <img src="{% static 'photo_galirey/img/+_icon.svg' %}" alt="">
+                    <h3 class="text-[20px]">{{ i.name_services }}</h3>
+                    <img src="{% static 'photo_galirey/img/+_icon.svg' %}" alt="" class="cursor-pointer services_button_open" data-index="{{ i.pk }}">
                 </div>
             </div>
         </div>
-        <div class="bg-center bg-cover" style="background-image: url({% static 'photo_galirey/img/img_zaglushka_yslygi.png' %})">
-            <span class="h-[1px] w-full bg-[#212123]/[.30] block"></span>
+
+        <div class="bg-center bg-cover hidden services_list_activ" style="background-image: url({{ i.img_background_services.url }})" data-index="{{ i.pk }}">
+             <span class="h-[1px] block"></span>
             <div class="bg-white/[.88] mt-[200px]">
                 <div class="mx-auto px-2 max-w-7xl">
                     <div class="flex justify-between py-[15px] px-[30px]">
-                        <h3 class="text-[#C08267] text-[24px]">Тариф “2”</h3>
-                        <img src="{% static 'photo_galirey/img/-_icon.svg' %}" alt="">
+                        <h3 class="text-[#C08267] text-[24px]">{{ i.name_services }}</h3>
+                        <img src="{% static 'photo_galirey/img/-_icon.svg' %}" alt="" class="cursor-pointer services_buttons_close" data-index="{{ i.pk }}">
                     </div>
-                    <div class="pb-[15px] px-[30px] flex-col pt-[30px]">
+                    <div class="py-[15px] px-[30px] flex-col">
                         <div class="flex justify-between">
                             <div class="w-[50%]">
-                                <span class="text-[20px]">9 часов</span>
-                                <ul class="mt-[21px]">
-                                    <li class="flex mb-[20px]">
-                                        <img src="{% static 'photo_galirey/img/-_icon.svg' %}" alt="--" class="mt-[6px] mr-[12px]">
-                                        <span>Два фотографа</span>
-                                    </li>
-                                    <li class="flex mb-[20px]">
-                                        <img src="{% static 'photo_galirey/img/-_icon.svg' %}" alt="--" class="mt-[6px] mr-[12px]">
-                                        <span>Цветокоррекция, ретушь снимков</span>
-                                    </li>
-                                    <li class="flex mb-[20px]">
-                                        <img src="{% static 'photo_galirey/img/-_icon.svg' %}" alt="--" class="mt-[6px] mr-[12px]">
-                                        <span>Анонс из 30 кадров через 2−3 дня после свадьбы</span>
-                                    </li>
-                                    <li class="flex mb-[20px]">
-                                        <img src="{% static 'photo_galirey/img/-_icon.svg' %}" alt="--" class="mt-[6px] mr-[12px]">
-                                        <span>Полностью готовый материал через месяц</span>
-                                    </li>
+                                <ul class="">
+                                    {% for j in specifics_services %}
+                                        {% if j.services == i %}
+                                        <li class="flex mb-[20px]">
+                                            <img src="{% static 'photo_galirey/img/-_icon.svg' %}" alt="--" class="mt-[6px] mr-[12px]">
+                                            <span>{{ j.specifics }}</span>
+                                        </li>
+                                        {% endif %}
+                                    {% endfor %}
                                 </ul>
                             </div>
                             <div class="w-[50%]">
-                                <p>	&emsp;Текс описания услуги, для кого больше подойдет, выделение особенностей оплаты.  Всегда работаю по договору (кстати, его можно подписать даже дистанционно</p>
+                                <p>	&emsp;{{ i.description }}</p>
                                 <div class="mt-[30px] mb-[20px]">
                                     <span class="font-bold">Почему это столько стоит?</span>
-                                    <p>	&emsp;Обьеснение клиенту почему это столько стоит. А с вами предварительную встречу- мы посидим в кафе, поболтаем, или же просто пообщаемся по skype. Так мы лучше узнаем друг друга, вы расскажете, что нравится вам, а я поделюсь своим опытом.</p>
+                                    <p>	&emsp;{{ i.question_price }}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="flex justify-between text-[20px]">
-                            <span class="">65 000 р</span>
+                            <span class="">{{ i.price|intcomma }} р</span>
                             <a href="#" class="border-b-2 border-[#C08267]">Заказать</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="bg-center bg-cover" style="background-image: url({% static 'photo_galirey/img/img_zaglushka_yslygi.png' %})">
-            <span class="h-[1px] w-full bg-[#212123]/[.30] block"></span>
-            <div class="bg-white/[.88] py-[15px]">
-                <div class="mx-auto px-[38px] max-w-7xl flex justify-between">
-                    <h3 class="text-[20px]">Тариф “3”</h3>
-                    <img src="{% static 'photo_galirey/img/+_icon.svg' %}" alt="">
-                </div>
-            </div>
-        </div>
-        <div class="bg-center bg-cover" style="background-image: url({% static 'photo_galirey/img/img_zaglushka_yslygi.png' %})">
-            <span class="h-[1px] w-full bg-[#212123]/[.30] block"></span>
-            <div class="bg-white/[.88] py-[15px]">
-                <div class="mx-auto px-[38px] max-w-7xl flex justify-between">
-                    <h3 class="text-[20px]">Тариф “4”</h3>
-                    <img src="{% static 'photo_galirey/img/+_icon.svg' %}" alt="">
-                </div>
-            </div>
-        </div>
-        <span class="h-[1px] w-full bg-[#212123]/[.30] block"></span>
     </div>
+    {% endfor %}
+    <span class="h-[1px] w-full bg-[#212123]/[.30] block"></span>
 </section>
 
 <section class="flex-col px-2 pt-24 mx-auto max-w-7xl">
@@ -153,28 +129,28 @@
 <section class="px-2 pt-24 pb-24 mx-auto max-w-7xl">
     <h2 class="mb-6 text-[30px]">Часто задаваемые вопросы</h2>
     <div>
-        <div>
-            <span class="h-[1px] w-full bg-[#212123]/[.30] block"></span>
-            <div class="flex justify-between my-[15px] mx-[30px]">
-                <span class="text-[20px]">Вопрос 1 что то про цену и доверие ?</span>
-                <img src="{% static 'photo_galirey/img/+_icon.svg' %}" alt="">
+        {% for i in faq %}
+        <div class="border-t-[1px] border-solid border-[#212123]/[.30]">
+            <div class="faq_list_unactiv" data-index="{{ i.pk }}">
+                <div class="flex justify-between my-[15px] mx-[30px]">
+                    <span class="text-[20px]">{{ i.name_faq }}</span>
+                    <img src="{% static 'photo_galirey/img/+_icon.svg' %}" alt="" class="cursor-pointer faq_button_open" data-index="{{ i.pk }}">
+                </div>
+            </div>
+            <div class="hidden faq_list_activ" data-index="{{ i.pk }}">
+                <div class="flex justify-between my-[15px] mx-[30px]">
+                    <span class="text-[#C08267] text-[24px]">{{ i.name_faq }}</span>
+                    <img src="{% static 'photo_galirey/img/-_icon.svg' %}" alt="" class="cursor-pointer faq_buttons_close" data-index="{{ i.pk }}">
+                </div>
+                <div class="mb-[15px] mx-[45px] opacity-[.85]">
+                    {{ i.description|linebreaksbr|linebreaks }}
+                </div>
             </div>
         </div>
-        <div>
-            <span class="h-[1px] w-full bg-[#212123]/[.30] block"></span>
-            <div class="flex justify-between my-[15px] mx-[30px]">
-                <span class="text-[#C08267] text-[24px]">Вопрос 1 что то про цену и доверие ?</span>
-                <img src="{% static 'photo_galirey/img/-_icon.svg' %}" alt="">
-            </div>
-            <div class="mb-[15px] mx-[45px] opacity-[.85]">
-                <p>Авным образом начало повседневной работы по формированию позиции способствует подготовки и реализации направлений прогрессивного развития. Равным образом укрепление и развитие структуры требуют определения и уточнения системы обучения Авным образом начало повседневной работы по</p>
-                <br>
-                <p>Позиции способствует подготовки и реализации направлений прогрессивного развития. Равным образом укрепление и развитие структуры требуют определения и уточнения системы обучения Авным образом начало повседневной работы по формированию позиции способствует</p>
-                <br>
-                <p>Позиции способствует подготовки и реализации направлений прогрессивного развития. Равным образом укрепление и развитие структуры требуют определения и уточнения системы обучения Авным образом начало повседневной работы по формированию позиции способствует</p>
-            </div>
-        </div>
+        {% endfor %}
         <span class="h-[1px] w-full bg-[#212123]/[.30] block"></span>
     </div>
 </section>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script type="module" src="{% static 'photo_galirey/js/index.js' %}"></script>
 {% include  'photo_galirey/footer.html' %}

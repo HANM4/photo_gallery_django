@@ -1,4 +1,4 @@
-export function modal_window_us(class_button_open, id_modal_window, class_buttons_close, slider = false){
+export function modal_window_use(class_button_open, id_modal_window, class_buttons_close, slider = false){
     class_button_open = $('.'+class_button_open);
     id_modal_window = $('#'+id_modal_window);
     class_buttons_close = $('.'+class_buttons_close);
@@ -15,7 +15,7 @@ export function modal_window_us(class_button_open, id_modal_window, class_button
             id_modal_window.attr('data-idslidactiv', slide_index_activate);
         };
     });
-}
+};
 
 
 
