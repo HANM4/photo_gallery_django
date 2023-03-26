@@ -10,7 +10,24 @@
          {% endfor %}
 
     </div>
-
+    {% if review %}
+    <div class="flex flex-col mt-[100px]">
+        <h4 class="mb-[25px] text-[25px]">Отзывы от клиента</h4>
+        <div class="">
+            <div class="flex mb-[20px]">
+                <div class="w-[72px] h-[72px] rounded-full overflow-hidden mr-[15px]">
+                    <img src="{{ review.img_reviewer.url }}" alt="" class="object-cover min-h-[100%] min-w-[100%]">
+                </div>
+                <div class="flex flex-col text-[14px]">
+                    <h4 class="text-[#C08267] text-[20px]">{{ review.name_reviewer }}</h4>
+                    <a href="{{ review.gallery.get_absolute_url }}" class="underline mb-[5px] cursor-pointer">“{{ review.gallery.name_work }}”</a>
+                    <a href="{{ review.social_networks }}" class="text-[#C08267]">@социальная сеть</a>
+                </div>
+            </div>
+            <div>{{ review.review|truncatechars:140 }} <a href="{{ review.get_absolute_url }}" class="text-[#C08267] cursor-pointer">Подробнее</a></div>
+        </div>
+    </div>
+    {% endif %}
     <div id="slider" class="hidden z-[50]">
         <div id="slider-list" class="fixed top-0 left-0 w-[100vw] h-[100vh] z-[100] overflow-hidden">
             <div id="slider_track" class="flex">

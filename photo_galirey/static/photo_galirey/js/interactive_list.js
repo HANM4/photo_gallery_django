@@ -1,4 +1,4 @@
-export function list_use(class_button_open, class_list_activ, class_list_unactiv, class_buttons_close){
+export function activ_or_unactiv_elements(class_button_open, class_list_activ, class_list_unactiv, class_buttons_close){
     let button_open = $('.'+class_button_open),
         buttons_close = $('.'+class_buttons_close),
         index;

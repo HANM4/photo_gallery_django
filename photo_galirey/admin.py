@@ -2,5 +2,4 @@ from django.contrib import admin
 
 from .models import *
 
-
-admin.site.register([Gallery, Img, Hashtags, HashtagsName, Services, SpecificsServices, FAQ])
+admin.site.register([Gallery, Img, Hashtags, HashtagsName, Services, SpecificsServices, FAQ, Review])

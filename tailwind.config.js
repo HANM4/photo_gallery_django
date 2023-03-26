@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     fontFamily: {
       'italictext': ['Dancing Script'],
+      'yeseva_one': ['Yeseva One']
     },
     extend: {},
   },

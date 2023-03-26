@@ -40,10 +40,14 @@
             <div class="flex flex-col w-full items-center text-white absolute top-[45%] z-[30]">
                 <span class="text-6xl font-['Yeseva_One']">Данил Салиния</span>
                 <span class="mt-2 mt-3 flex">
-                    {% if gallery %}
+                    {% if gallery_int %}
                         <a href="{% url page_name %}"><span class="cursor-pointer">{{ menu_activ }}</span></a>
                         <span class="mx-[5px]"> > </span>
-                        <h1 class="font-['Comfortaa'] cursor-pointer" >{{ gallery.name_work }}</h1>
+                        <h1 class="font-['Comfortaa'] cursor-pointer" >{{ gallery_int.name_work }}</h1>
+                    {% elif review_int %}
+                        <a href="{% url page_name %}"><span class="cursor-pointer">{{ menu_activ }}</span></a>
+                        <span class="mx-[5px]"> > </span>
+                        <h1 class="font-['Comfortaa'] cursor-pointer" >{{ review_int.name_reviewer }} о альбоме {{ review_int.gallery.name_work }}</h1>
                     {% else %}
                     <a href="{% url page_name %}"><h1 class="font-['Comfortaa'] cursor-pointer"> {{ menu_activ }} </h1></a>
                     {% endif %}

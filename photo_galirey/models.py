@@ -69,3 +69,19 @@ class FAQ(models.Model):
 
     def __str__(self):
         return self.name_faq
+
+
+class Review(models.Model):
+    name_reviewer = models.CharField(max_length=255, help_text='Не больше 255 символов', null=True)
+    review = models.TextField(max_length=1000, help_text='Не больше 1000 символов', null=True)
+    img_reviewer = models.ImageField()
+    social_networks = models.CharField(max_length=255, help_text='Не больше 255 символов', null=True)
+    gallery = models.OneToOneField(Gallery, on_delete=models.CASCADE, primary_key=True)
+    date_creation = models.DateTimeField(auto_now_add=True)
+    date_changes = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name_reviewer
+
+    def get_absolute_url(self):
+        return reverse('review_int', kwargs={'review_id': self.pk})

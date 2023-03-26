@@ -1,0 +1,33 @@
+{% load static %}
+{% include 'photo_galirey/header_galirey_min.html' %}
+<section class="px-4 pt-[60px] pb-[60px] mx-auto max-w-7xl md:px-2">
+    <div class="mb-[60px]">
+        <div>
+            <h3 class="text-[36px] text-[#C08267]">{{ review_int.name_reviewer }}</h3>
+            <a href="{{ review_int.social_networks }}" class="cursor-pointer underline">@социальная сеть</a>
+        </div>
+    </div>
+<!--    <div class="mb-[60px] flex">-->
+<!--        <div class="w-[100px] h-[100px] rounded-full overflow-hidden mr-[25px]">-->
+<!--            <img src="{{ review_int.img_reviewer.url }}" alt="" class="object-cover min-h-[100%] min-w-[100%]">-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <h3 class="text-[36px] text-[#C08267]">{{ review_int.name_reviewer }}</h3>-->
+<!--            <a href="{{ review_int.social_networks }}" class="cursor-pointer underline">@социальная сеть</a>-->
+<!--        </div>-->
+<!--    </div>-->
+    <div class="mb-[60px]">{{ review_int.review|linebreaksbr|linebreaks }}</div>
+    <div>
+        <h4 class="mb-[25px] text-[25px]">Фотграфии сделаные для клиента</h4>
+        <div  class="overflow-hidden group relative h-[300px] w-[600px]">
+            <a href="{{ review_int.gallery.get_absolute_url }}" class="cursor-default">
+                <img src="{{ review_int.gallery.img_background_work.url}}" class="object-cover h-[300px] w-[600px]" alt=""/>
+                <div class="absolute px-4 pt-2.5 flex flex-col bottom-[0] bg-white w-[100%]">
+                    <span class="text-[20px] font-bold flex">{{ review_int.gallery.name_work }}</span>
+                    <span class="mt-1 border-b-2 border-[#C08267] hidden group-hover:inline-block w-fit cursor-pointer">Подробнее</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+{% include  'photo_galirey/footer.html' %}
