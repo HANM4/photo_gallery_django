@@ -553,6 +553,10 @@ h1,h2,h3,h4,h5,h6 {
   left: 0px;
 }
 
+.left-\[-10px\] {
+  left: -10px;
+}
+
 .left-\[20px\] {
   left: 20px;
 }
@@ -573,6 +577,10 @@ h1,h2,h3,h4,h5,h6 {
   right: 0px;
 }
 
+.right-\[10px\] {
+  right: 10px;
+}
+
 .right-\[20px\] {
   right: 20px;
 }
@@ -583,6 +591,14 @@ h1,h2,h3,h4,h5,h6 {
 
 .top-0 {
   top: 0px;
+}
+
+.top-\[-10px\] {
+  top: -10px;
+}
+
+.top-\[10px\] {
+  top: 10px;
 }
 
 .top-\[20px\] {
@@ -767,10 +783,6 @@ h1,h2,h3,h4,h5,h6 {
   margin-top: 1.5rem;
 }
 
-.mt-\[100px\] {
-  margin-top: 100px;
-}
-
 .mt-\[12px\] {
   margin-top: 12px;
 }
@@ -785,6 +797,10 @@ h1,h2,h3,h4,h5,h6 {
 
 .mt-\[46px\] {
   margin-top: 46px;
+}
+
+.mt-\[60px\] {
+  margin-top: 60px;
 }
 
 .mt-\[6px\] {
@@ -851,6 +867,10 @@ h1,h2,h3,h4,h5,h6 {
   height: 170px;
 }
 
+.h-\[17px\] {
+  height: 17px;
+}
+
 .h-\[1px\] {
   height: 1px;
 }
@@ -859,12 +879,24 @@ h1,h2,h3,h4,h5,h6 {
   height: 2.7rem;
 }
 
+.h-\[200px\] {
+  height: 200px;
+}
+
 .h-\[20px\] {
   height: 20px;
 }
 
+.h-\[250px\] {
+  height: 250px;
+}
+
 .h-\[270px\] {
   height: 270px;
+}
+
+.h-\[2px\] {
+  height: 2px;
 }
 
 .h-\[300px\] {
@@ -893,6 +925,10 @@ h1,h2,h3,h4,h5,h6 {
 
 .h-\[560px\] {
   height: 560px;
+}
+
+.h-\[580px\] {
+  height: 580px;
 }
 
 .h-\[600px\] {
@@ -959,6 +995,14 @@ h1,h2,h3,h4,h5,h6 {
   width: 14rem;
 }
 
+.w-\[15px\] {
+  width: 15px;
+}
+
+.w-\[17px\] {
+  width: 17px;
+}
+
 .w-\[20px\] {
   width: 20px;
 }
@@ -981,6 +1025,10 @@ h1,h2,h3,h4,h5,h6 {
 
 .w-\[414\.666666px\] {
   width: 414.666666px;
+}
+
+.w-\[460px\] {
+  width: 460px;
 }
 
 .w-\[490px\] {
@@ -1007,6 +1055,14 @@ h1,h2,h3,h4,h5,h6 {
   width: 525px;
 }
 
+.w-\[540px\] {
+  width: 540px;
+}
+
+.w-\[560px\] {
+  width: 560px;
+}
+
 .w-\[600px\] {
   width: 600px;
 }
@@ -1021,6 +1077,10 @@ h1,h2,h3,h4,h5,h6 {
 
 .w-\[72px\] {
   width: 72px;
+}
+
+.w-\[900px\] {
+  width: 900px;
 }
 
 .w-fit {
@@ -1076,8 +1136,14 @@ h1,h2,h3,h4,h5,h6 {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.cursor-default {
-  cursor: default;
+.rotate-\[-45deg\] {
+  --tw-rotate: -45deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.rotate-\[45deg\] {
+  --tw-rotate: 45deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .cursor-pointer {
@@ -1220,6 +1286,11 @@ h1,h2,h3,h4,h5,h6 {
   background-color: rgb(192 130 103 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#fff\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 .bg-\[\#fff\]\/\[\.88\] {
   background-color: rgb(255 255 255 / .88);
 }
@@ -1312,6 +1383,11 @@ h1,h2,h3,h4,h5,h6 {
   padding-right: 38px;
 }
 
+.px-\[40px\] {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
 .py-11 {
   padding-top: 2.75rem;
   padding-bottom: 2.75rem;
@@ -1330,6 +1406,11 @@ h1,h2,h3,h4,h5,h6 {
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
+}
+
+.py-\[10px\] {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .py-\[15px\] {
@@ -1436,6 +1517,10 @@ h1,h2,h3,h4,h5,h6 {
   font-size: 14px;
 }
 
+.text-\[16px\] {
+  font-size: 16px;
+}
+
 .text-\[20px\] {
   font-size: 20px;
 }
@@ -1539,6 +1624,11 @@ h1,h2,h3,h4,h5,h6 {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.blur-\[60px\] {
+  --tw-blur: blur(60px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .backdrop-blur-\[10px\] {

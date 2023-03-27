@@ -20,7 +20,7 @@
     <div>
         <h4 class="mb-[25px] text-[25px]">Фотграфии сделаные для клиента</h4>
         <div  class="overflow-hidden group relative h-[300px] w-[600px]">
-            <a href="{{ review_int.gallery.get_absolute_url }}" class="cursor-default">
+            <a href="{{ review_int.gallery.get_absolute_url }}">
                 <img src="{{ review_int.gallery.img_background_work.url}}" class="object-cover h-[300px] w-[600px]" alt=""/>
                 <div class="absolute px-4 pt-2.5 flex flex-col bottom-[0] bg-white w-[100%]">
                     <span class="text-[20px] font-bold flex">{{ review_int.gallery.name_work }}</span>
