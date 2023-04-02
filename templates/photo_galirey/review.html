@@ -1,8 +1,9 @@
 {% load static %}
 {% include 'photo_galirey/header_galirey_min.html' %}
-<section class="flex  flex-col px-2 py-24 mx-auto max-w-[1070px] items-center">
+<section class="flex  flex-col px-2 pt-24 mx-auto max-w-[1070px] items-center">
     <div class="flex flex-wrap justify-between">
         {% for i in review %}
+        {% if i.publication %}
         <div class="w-[525px] mb-[80px]">
             <div class="flex mb-[20px]">
                 <div class="w-[72px] h-[72px] rounded-full overflow-hidden mr-[15px]">
@@ -14,20 +15,12 @@
                     <a href="{{ i.social_networks }}" class="text-[#C08267]">@социальная сеть</a>
                 </div>
             </div>
-            <div>{{ i.review|truncatechars:140 }} <a href="{{ i.get_absolute_url }}" class="text-[#C08267] cursor-pointer">Подробнее</a></div>
+            <div>{{ i.review|truncatechars:140 }} <a href="{{ i.get_absolute_url }}"
+                                                     class="text-[#C08267] cursor-pointer">Подробнее</a></div>
         </div>
+        {% endif %}
         {% endfor %}
     </div>
-    <span class="hidden text-[#C08267] text-[25px] font-yeseva_one flex cursor-pointer h">Ещё...</span>
-</section>
-<section class="flex px-2 pb-24 mx-auto max-w-[1070px] flex-col justify-between">
-    <h3 class="mb-[15px] text-[25px]">Оставить отзыв</h3>
-    <form class="flex flex-col">
-        <input type="text" placeholder="Ссылка на соц есть для связи  /  VK, Instagram, Facebook" class="rounded-[2px] bg-white border-[#212123]/[.70] border-[1px] mb-[15px] px-[30px] pt-[13px] pb-[12px]">
-        <input type="text" placeholder="Имя  /  Name" class="rounded-[2px] bg-white border-[#212123]/[.70] border-[1px] mb-[15px] px-[30px] pt-[13px] pb-[12px]">
-        <textarea  type="text" placeholder="Отзыв  /  Review" class="rounded-[2px] bg-white border-[#212123]/[.70] border-[1px] mb-[15px] px-[30px] pt-[13px] pb-[12px] h-[170px]"></textarea>
-        <button class="rounded-[2px] border-[#C08267] border-[1px] text-[#C08267] px-[18px] pt-[11px] pb-[12px] w-fit mx-auto">Отправить</button>
-    </form>
-
+    <span class="mb-[80px] hidden text-[#C08267] text-[25px] font-yeseva_one flex cursor-pointer h">Ещё...</span>
 </section>
 {% include  'photo_galirey/footer.html' %}

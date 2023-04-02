@@ -3,7 +3,7 @@
 <section class="px-4 pt-[60px] pb-[60px] mx-auto max-w-7xl md:px-2">
     <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-12">
         <button class="relative text-sm focus:outline-none group mt-4 sm:mt-0">
-            <div class="flex items-center justify-between w-40 h-10 px-3 border-2 border-gray-300 hover:bg-gray-300">
+            <div class="rounded-[2px] flex items-center justify-between w-40 h-10 px-3 border-2 border-gray-300 hover:bg-gray-300">
                 <span class="font-medium">
                     Popular
                 </span>
@@ -21,6 +21,7 @@
 
     <div class="grid 2xl:grid-cols-3 xl:grid-cols-3 lg:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-x-6 gap-y-12 w-full mt-6">
         {% for i in gallery %}
+        {% if i.publication %}
         <div class="w-full bg-white overflow-hidden group relative">
             <a href="{{ i.get_absolute_url }}">
                 <img src="{{i.img_background_work.url}}" class="object-cover w-full h-[400px]" alt=""/>
@@ -30,6 +31,7 @@
                 </div>
             </a>
         </div>
+        {% endif %}
         {% endfor %}
     </div>
 

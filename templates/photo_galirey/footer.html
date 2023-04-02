@@ -1,8 +1,9 @@
 {% load static %}
 <footer class="">
-    <div class=" w-full bg-cover bg-center" style="background-image: url({% static 'photo_galirey/img/background_image_footer.png' %})">
-         <div class="px py-24 mx-auto max-w-7xl flex justify-between">
-             <a class="font-medium cursor-pointer" href="{% url 'home' %}">
+    <div class=" w-full bg-cover bg-center"
+         style="background-image: url({% static 'photo_galirey/img/background_image_footer.png' %})">
+        <div class="px py-24 mx-auto max-w-7xl flex justify-between">
+            <a class="font-medium cursor-pointer" href="{% url 'home' %}">
                 <span class="text-[25px] font-italictext">Disipion Salinia</span>
             </a>
             <div>
@@ -50,19 +51,23 @@
                     <span>г. Москва ул. Парковая 2-я</span>
                 </div>
             </div>
-         </div>
-        <div class="bg-black/[.65] text-white flex-col flexmx-auto py-5 justify-center">
-            <div class="flex justify-center">
-                <div class="w-[490px] mr-8">
-                    <h2 class="text-xl mb-2">Заказать звонок</h2>
-                    <text class="">Таким образом начало повседневной работы по формированию позиции способствует подготовки и реализации направлений прогрессивного развития.</text>
+        </div>
+        <div class="bg-black/[.65]">
+            <div class=" text-white flex flex-col py-5 px-4 mx-auto max-w-7xl w-fit">
+                <h2 class="text-xl mb-2 w-fit">Заказать звонок</h2>
+                <div class="flex">
+                    <div class="w-[700px] mr-[20px]">
+                        Таким образом начало повседневной работы по формированию позиции способствует
+                        подготовки и реализации направлений прогрессивного развития.
+                    </div>
+                    <a href="{% url 'contacts' %}" class="rounded-[2px] h-[2.7rem] bg-[#C08267] flex justify-center items-center px-3">
+                        Заказать звонок
+                    </a>
                 </div>
-                <form action="" class="flex justify-arow mt-[46px]">
-                    <input type="text" placeholder="Ваш номер телефона" class="h-[2.7rem] w-[14rem] mr-1 pl-4 border-2 border-[#F5EEEB] bg-transparent text-[#F5EEEB] placeholder:text-[#F5EEEB]">
-                    <button class="h-[2.7rem] bg-[#C08267] flex justify-center items-center px-3">Заказать звонок</button>
-                </form>
             </div>
         </div>
+
+
     </div>
 
     <div class="flex my-3 px-5 justify-center text-black">
@@ -71,5 +76,26 @@
     </div>
 
 </footer>
+<div class="fixed top-0 left-0 h-screen w-screen hidden z-[100]" id="modal_window_order_bell_ok">
+    <div class="fixed top-0 left-0 h-screen w-screen bg-[#212123]/[.85] backdrop-blur-[10px] close_modal_window_order_bell_ok"></div>
+    <div class="overflow-hidden relative w-[540px] h-[200px] fixed top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] bg-[#fff]">
+        <div class="blur-[60px] rounded-full h-[100px] w-[100px] bg-[#C08267] absolute top-[-10px] left-[-10px]"></div>
+        <div class="top-[10px] right-[10px] absolute w-[17px] h-[17px] cursor-pointer close_modal_window_order_bell_ok">
+            <div class="bg-[#C08267] h-[2px] w-[15px] absolute rotate-[45deg] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"></div>
+            <div class="bg-[#C08267] h-[2px] w-[15px] absolute rotate-[-45deg] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"></div>
+        </div>
+        <div class="flex items-center flex-col top-[50%] left-[50%] absolute translate-x-[-50%] translate-y-[-50%]">
+            <h5 class="inline-block text-[24px] text-center mb-[20px] w-[460px]">Мы свяжимся с вам</br>в течение одного
+                рабочего дня</h5>
+            <div class="inline-block text-[#C08267] border-2 border-solid border-[#C08267] text-[16px] py-[10px] px-[40px] w-fit cursor-pointer close_modal_window_order_bell_ok">
+                Хорошо
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js"
+        type="text/javascript"></script>
+<script type="module" src="{% static 'photo_galirey/js/footer.js' %}"></script>
 </body>
 </html>

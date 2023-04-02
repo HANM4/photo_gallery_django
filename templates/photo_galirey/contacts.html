@@ -18,11 +18,12 @@
             </div>
         </div>
         <div class="w-[40%]">
-            <form class="flex flex-col">
-                <input type="phone" placeholder="Телефон / Phone" class="rounded-[2px] bg-white border-[#212123]/[.70] border-[1px] mb-[15px] px-[30px] pt-[13px] pb-[12px]">
-                <input type="text" placeholder="Имя / Name" class="rounded-[2px] bg-white border-[#212123]/[.70] border-[1px] mb-[15px] px-[30px] pt-[13px] pb-[12px]">
-                <textarea  type="text" placeholder="Сообщение  /  Message" class="rounded-[2px] bg-white border-[#212123]/[.70] border-[1px] mb-[15px] px-[30px] pt-[13px] pb-[12px] h-[170px]"></textarea>
-                <button class="rounded-[2px] border-[#C08267] border-[1px] text-[#C08267] px-[18px] pt-[11px] pb-[12px] w-fit mx-auto">Заказать звонок</button>
+            <form class="flex flex-col" method="post" id="form_order_bell">
+                {% csrf_token %}
+                <input id="{{ order_call_form.call.auto_id }}" name="{{ order_call_form.call.name }}" type="phone" placeholder="Телефон / Phone" class="rounded-[2px] bg-white border-[#212123]/[.70] border-[1px] mb-[15px] px-[30px] pt-[13px] pb-[12px] w-[220px]">
+                <input id="{{ order_call_form.name.auto_id }}" name="{{ order_call_form.name.name }}" type="text" placeholder="Имя / Name" class="rounded-[2px] bg-white border-[#212123]/[.70] border-[1px] mb-[15px] px-[30px] pt-[13px] pb-[12px]">
+                <textarea  id="{{ order_call_form.message.auto_id }}" name="{{ order_call_form.message.name }}" type="text" placeholder="Сообщение  /  Message" class="rounded-[2px] bg-white border-[#212123]/[.70] border-[1px] mb-[15px] px-[30px] pt-[13px] pb-[12px] h-[170px]"></textarea>
+                <button type="submit" class="rounded-[2px] border-[#C08267] border-[1px] text-[#C08267] px-[18px] pt-[11px] pb-[12px] w-fit mx-auto">Заказать звонок</button>
             </form>
         </div>
     </div>
@@ -66,4 +67,5 @@
         </div>
     </div>
 </section>
+<script type="module" src="{% static 'photo_galirey/js/contacts.js' %}"></script>
 {% include  'photo_galirey/footer.html' %}

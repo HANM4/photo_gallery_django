@@ -3,14 +3,17 @@
 {% include  'photo_galirey/header_index.html' %}
 <section class="flex px-2 pt-24 mx-auto max-w-7xl justify-between items-center">
     <div class="relative h-[600px] w-[610px]">
-        <img src="{% static 'photo_galirey/img/about_me_img_1.png' %}" alt="" class="w-[500px] h-[560px] object-cover absolute top-0 left-0">
-        <img src="{% static 'photo_galirey/img/about_me_img_2.png' %}" alt="" class="w-[320px] h-[380px] object-cover absolute bottom-0 right-0">
+        <img src="{% static 'photo_galirey/img/about_me_img_1.png' %}" alt=""
+             class="w-[500px] h-[560px] object-cover absolute top-0 left-0">
+        <img src="{% static 'photo_galirey/img/about_me_img_2.png' %}" alt=""
+             class="w-[320px] h-[380px] object-cover absolute bottom-0 right-0">
     </div>
     <div class="w-[523px]">
         <h2 class="text-[30px] mb-[25px]">Обо Мне</h2>
         <h3 class="text-[#C08267] text-[27px] mb-[21px]">Дмитрий Рокотов</h3>
         <div class="mb-[80px]">
-            <p>Авным образом начало повседневной работы по формированию позиции способствует подготовки и реализации направлений прогрессивного развития.</p>
+            <p>Авным образом начало повседневной работы по формированию позиции способствует подготовки и реализации
+                направлений прогрессивного развития.</p>
             <br>
             <p>позиции способствует подготовки и реализации направлений прогрессивного развития.</p>
             <br>
@@ -24,23 +27,30 @@
     <div>
         <div class="flex items-start mb-[21px]">
             <img src="{% static 'photo_galirey/img/-_icon.svg' %}" alt="--" class="mt-[12px] mr-[12px]">
-            <p class="opacity-[.85]">Тут написанны особенности заказа, заключения договора, и все сторонние процидуры которые надо описать.</p>
+            <p class="opacity-[.85]">Тут написанны особенности заказа, заключения договора, и все сторонние процидуры
+                которые надо описать.</p>
         </div>
         <div class="flex items-start mb-[21px]">
             <img src="{% static 'photo_galirey/img/-_icon.svg' %}" alt="--" class="mt-[12px] mr-[12px]">
-            <p class="opacity-[.85]">Я с радостью проведу с вами предварительную встречу мы посидим в кафе, поболтаем, или же просто пообщаемся по skype. Так мы лучше узнаем друг друга, вы расскажете, что нравится вам, а я поделюсь своим опытом.</p>
+            <p class="opacity-[.85]">Я с радостью проведу с вами предварительную встречу мы посидим в кафе, поболтаем,
+                или же просто пообщаемся по skype. Так мы лучше узнаем друг друга, вы расскажете, что нравится вам, а я
+                поделюсь своим опытом.</p>
         </div>
         <div class="flex items-start mb-[21px]">
             <img src="{% static 'photo_galirey/img/-_icon.svg' %}" alt="--" class="mt-[12px] mr-[12px]">
-            <p class="opacity-[.85]">Во время съёмки весь материал дублируется на 2 флешки — риск остаться без фотографий равен нулю.</p>
+            <p class="opacity-[.85]">Во время съёмки весь материал дублируется на 2 флешки — риск остаться без
+                фотографий равен нулю.</p>
         </div>
         <div class="flex items-start mb-[21px]">
             <img src="{% static 'photo_galirey/img/-_icon.svg' %}" alt="--" class="mt-[12px] mr-[12px]">
-            <p class="opacity-[.85]">Я отдаю фотографии через современный специализированный сайт-галерею. Поверьте, это выглядит намного красивее, чем на флешке, и не требует дополнительных временных затрат для передачи материала.</p>
+            <p class="opacity-[.85]">Я отдаю фотографии через современный специализированный сайт-галерею. Поверьте, это
+                выглядит намного красивее, чем на флешке, и не требует дополнительных временных затрат для передачи
+                материала.</p>
         </div>
         <div class="flex items-start mb-[21px]">
             <img src="{% static 'photo_galirey/img/-_icon.svg' %}" alt="--" class="mt-[12px] mr-[12px]">
-            <p class="opacity-[.85]">Я не стесняюсь показать полный материал с других свадеб так вы сможете наглядно убедиться в моем профессионализме и будете уверены в результате.</p>
+            <p class="opacity-[.85]">Я не стесняюсь показать полный материал с других свадеб так вы сможете наглядно
+                убедиться в моем профессионализме и будете уверены в результате.</p>
         </div>
     </div>
 </section>
@@ -48,55 +58,62 @@
 <section class="pt-24">
     <h2 class="mb-6 text-[30px] mx-auto px-2 max-w-7xl">Услуги</h2>
     {% for i in services %}
+    {% if i.publication %}
     <div class="border-t-[1px] border-solid border-[#212123]/[.30]">
-        <div class="bg-center bg-cover services_list_unactiv" style="background-image: url({{ i.img_background_services.url }})" data-index="{{ i.pk }}">
+        <div class="bg-center bg-cover services_list_unactiv"
+             style="background-image: url({{ i.img_background_services.url }})" data-index="{{ i.pk }}">
             <div class="bg-white/[.88] py-[15px]">
                 <div class="mx-auto px-[38px] max-w-7xl flex justify-between">
                     <h3 class="text-[20px]">{{ i.name_services }}</h3>
-                    <img src="{% static 'photo_galirey/img/+_icon.svg' %}" alt="" class="cursor-pointer services_button_open" data-index="{{ i.pk }}">
+                    <img src="{% static 'photo_galirey/img/+_icon.svg' %}" alt=""
+                         class="cursor-pointer services_button_open" data-index="{{ i.pk }}">
                 </div>
             </div>
         </div>
 
-        <div class="bg-center bg-cover hidden services_list_activ" style="background-image: url({{ i.img_background_services.url }})" data-index="{{ i.pk }}">
-             <span class="h-[1px] block"></span>
+        <div class="bg-center bg-cover hidden services_list_activ"
+             style="background-image: url({{ i.img_background_services.url }})" data-index="{{ i.pk }}">
+            <span class="h-[1px] block"></span>
             <div class="bg-white/[.88] mt-[200px]">
                 <div class="mx-auto px-2 max-w-7xl">
                     <div class="flex justify-between py-[15px] px-[30px]">
                         <h3 class="text-[#C08267] text-[24px]">{{ i.name_services }}</h3>
-                        <img src="{% static 'photo_galirey/img/-_icon.svg' %}" alt="" class="cursor-pointer services_buttons_close" data-index="{{ i.pk }}">
+                        <img src="{% static 'photo_galirey/img/-_icon.svg' %}" alt=""
+                             class="cursor-pointer services_buttons_close" data-index="{{ i.pk }}">
                     </div>
                     <div class="py-[15px] px-[30px] flex-col">
                         <div class="flex justify-between">
                             <div class="w-[50%]">
                                 <ul class="">
                                     {% for j in specifics_services %}
-                                        {% if j.services == i %}
-                                        <li class="flex mb-[20px]">
-                                            <img src="{% static 'photo_galirey/img/-_icon.svg' %}" alt="--" class="mt-[6px] mr-[12px]">
-                                            <span>{{ j.specifics }}</span>
-                                        </li>
-                                        {% endif %}
+                                    {% if j.services == i %}
+                                    <li class="flex mb-[20px]">
+                                        <img src="{% static 'photo_galirey/img/-_icon.svg' %}" alt="--"
+                                             class="mt-[6px] mr-[12px]">
+                                        <span>{{ j.specifics }}</span>
+                                    </li>
+                                    {% endif %}
                                     {% endfor %}
                                 </ul>
                             </div>
                             <div class="w-[50%]">
-                                <p>	&emsp;{{ i.description }}</p>
+                                <p> &emsp;{{ i.description }}</p>
                                 <div class="mt-[30px] mb-[20px]">
                                     <span class="font-bold">Почему это столько стоит?</span>
-                                    <p>	&emsp;{{ i.question_price }}</p>
+                                    <p> &emsp;{{ i.question_price }}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="flex justify-between text-[20px]">
                             <span class="">{{ i.price|intcomma }} р</span>
-                            <a href="#" class="border-b-2 border-[#C08267]">Заказать</a>
+                            <button class="border-b-2 border-[#C08267] open_modal_window_order_photo" data-service="{{ i.pk }}">Заказать</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    {% endif %}
     {% endfor %}
     <span class="h-[1px] w-full bg-[#212123]/[.30] block"></span>
 </section>
@@ -105,110 +122,114 @@
     <h2 class="mb-6 text-[30px]">Лучшие Работы</h2>
     <div class="flex justify-between h-[1400px] mb-[35px]">
         <div class="flex flex-col justify-between">
-            <img src="{% static 'photo_galirey/img/gallery_img_1.png' %}" alt="" class="h-[270px] w-[414.666666px]  object-cover">
-            <img src="{% static 'photo_galirey/img/gallery_img_2.png' %}" alt="" class="h-[550px] w-[414.666666px]  object-cover">
-            <img src="{% static 'photo_galirey/img/gallery_img_3.png' %}" alt="" class="h-[270px] w-[414.666666px]  object-cover">
-            <img src="{% static 'photo_galirey/img/gallery_img_4.png' %}" alt="" class="h-[270px] w-[414.666666px]  object-cover">
+            <img src="{% static 'photo_galirey/img/gallery_img_1.png' %}" alt=""
+                 class="h-[270px] w-[414.666666px]  object-cover">
+            <img src="{% static 'photo_galirey/img/gallery_img_2.png' %}" alt=""
+                 class="h-[550px] w-[414.666666px]  object-cover">
+            <img src="{% static 'photo_galirey/img/gallery_img_3.png' %}" alt=""
+                 class="h-[270px] w-[414.666666px]  object-cover">
+            <img src="{% static 'photo_galirey/img/gallery_img_4.png' %}" alt=""
+                 class="h-[270px] w-[414.666666px]  object-cover">
         </div>
         <div class="flex flex-col justify-between">
-            <img src="{% static 'photo_galirey/img/gallery_img_5.png' %}" alt="" class="h-[550px] w-[414.666666px]  object-cover">
-            <img src="{% static 'photo_galirey/img/gallery_img_6.png' %}" alt="" class="h-[270px] w-[414.666666px]  object-cover">
-            <img src="{% static 'photo_galirey/img/gallery_img_7.png' %}" alt="" class="h-[270px] w-[414.666666px]  object-cover">
-            <img src="{% static 'photo_galirey/img/gallery_img_1.png' %}" alt="" class="h-[270px] w-[414.666666px]  object-cover">
+            <img src="{% static 'photo_galirey/img/gallery_img_5.png' %}" alt=""
+                 class="h-[550px] w-[414.666666px]  object-cover">
+            <img src="{% static 'photo_galirey/img/gallery_img_6.png' %}" alt=""
+                 class="h-[270px] w-[414.666666px]  object-cover">
+            <img src="{% static 'photo_galirey/img/gallery_img_7.png' %}" alt=""
+                 class="h-[270px] w-[414.666666px]  object-cover">
+            <img src="{% static 'photo_galirey/img/gallery_img_1.png' %}" alt=""
+                 class="h-[270px] w-[414.666666px]  object-cover">
         </div>
         <div class="flex flex-col justify-between">
-            <img src="{% static 'photo_galirey/img/gallery_img_2.png' %}" alt="" class="h-[270px] w-[414.666666px]  object-cover">
-            <img src="{% static 'photo_galirey/img/gallery_img_3.png' %}" alt="" class="h-[270px] w-[414.666666px]  object-cover">
-            <img src="{% static 'photo_galirey/img/gallery_img_4.png' %}" alt="" class="h-[270px] w-[414.666666px]  object-cover">
-            <img src="{% static 'photo_galirey/img/gallery_img_5.png' %}" alt="" class="h-[550px] w-[414.666666px]  object-cover">
+            <img src="{% static 'photo_galirey/img/gallery_img_2.png' %}" alt=""
+                 class="h-[270px] w-[414.666666px]  object-cover">
+            <img src="{% static 'photo_galirey/img/gallery_img_3.png' %}" alt=""
+                 class="h-[270px] w-[414.666666px]  object-cover">
+            <img src="{% static 'photo_galirey/img/gallery_img_4.png' %}" alt=""
+                 class="h-[270px] w-[414.666666px]  object-cover">
+            <img src="{% static 'photo_galirey/img/gallery_img_5.png' %}" alt=""
+                 class="h-[550px] w-[414.666666px]  object-cover">
         </div>
     </div>
-    <div class="flex justify-end"><a href="{% url 'gallery' %}" class="border-b-2 border-[#C08267] text-[20px]">Остальное портфолио</a></div>
+    <div class="flex justify-end"><a href="{% url 'gallery' %}" class="border-b-2 border-[#C08267] text-[20px]">Остальное
+        портфолио</a></div>
 </section>
 
 <section class="px-2 pt-24 pb-24 mx-auto max-w-7xl">
     <h2 class="mb-6 text-[30px]">Часто задаваемые вопросы</h2>
     <div>
         {% for i in faq %}
+        {% if i.publication %}
         <div class="border-t-[1px] border-solid border-[#212123]/[.30]">
             <div class="faq_list_unactiv" data-index="{{ i.pk }}">
                 <div class="flex justify-between my-[15px] mx-[30px]">
                     <span class="text-[20px]">{{ i.name_faq }}</span>
-                    <img src="{% static 'photo_galirey/img/+_icon.svg' %}" alt="" class="cursor-pointer faq_button_open" data-index="{{ i.pk }}">
+                    <img src="{% static 'photo_galirey/img/+_icon.svg' %}" alt="" class="cursor-pointer faq_button_open"
+                         data-index="{{ i.pk }}">
                 </div>
             </div>
             <div class="hidden faq_list_activ" data-index="{{ i.pk }}">
                 <div class="flex justify-between my-[15px] mx-[30px]">
                     <span class="text-[#C08267] text-[24px]">{{ i.name_faq }}</span>
-                    <img src="{% static 'photo_galirey/img/-_icon.svg' %}" alt="" class="cursor-pointer faq_buttons_close" data-index="{{ i.pk }}">
+                    <img src="{% static 'photo_galirey/img/-_icon.svg' %}" alt=""
+                         class="cursor-pointer faq_buttons_close" data-index="{{ i.pk }}">
                 </div>
                 <div class="mb-[15px] mx-[45px] opacity-[.85]">
                     {{ i.description|linebreaksbr|linebreaks }}
                 </div>
             </div>
         </div>
+        {% endif %}
         {% endfor %}
         <span class="h-[1px] w-full bg-[#212123]/[.30] block"></span>
     </div>
 </section>
-<div class="fixed top-0 left-0 h-screen w-screen bg-[#212123]/[.85] backdrop-blur-[10px]">
-    <div class="overflow-hidden relative w-[540px] h-[200px] fixed top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] bg-[#fff]">
-        <div class="blur-[60px] rounded-full h-[100px] w-[100px] bg-[#C08267] absolute top-[-10px] left-[-10px]"></div>
-        <div class="top-[10px] right-[10px] absolute w-[17px] h-[17px] cursor-pointer">
-            <div class="bg-[#C08267] h-[2px] w-[15px] absolute rotate-[45deg] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"></div>
-            <div class="bg-[#C08267] h-[2px] w-[15px] absolute rotate-[-45deg] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"></div>
-        </div>
-        <div class="flex items-center flex-col top-[50%] left-[50%] absolute translate-x-[-50%] translate-y-[-50%]">
-            <h5 class="inline-block text-[24px] text-center mb-[20px] w-[460px]">Мы рады что вы оставили свой отзыв</h5>
-            <div class="inline-block text-[#C08267] border-2 border-solid border-[#C08267] text-[16px] py-[10px] px-[40px] w-fit cursor-pointer">Хорошо</div>
-        </div>
-    </div>
-</div>
-<div class="fixed top-0 left-0 h-screen w-screen bg-[#212123]/[.85] backdrop-blur-[10px]">
-    <div class="overflow-hidden relative w-[540px] h-[200px] fixed top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] bg-[#fff]">
-        <div class="blur-[60px] rounded-full h-[100px] w-[100px] bg-[#C08267] absolute top-[-10px] left-[-10px]"></div>
-        <div class="top-[10px] right-[10px] absolute w-[17px] h-[17px] cursor-pointer">
-            <div class="bg-[#C08267] h-[2px] w-[15px] absolute rotate-[45deg] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"></div>
-            <div class="bg-[#C08267] h-[2px] w-[15px] absolute rotate-[-45deg] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"></div>
-        </div>
-        <div class="flex items-center flex-col top-[50%] left-[50%] absolute translate-x-[-50%] translate-y-[-50%]">
-            <h5 class="inline-block text-[24px] text-center mb-[20px] w-[460px]">Мы свяжимся с вам</br>в течение одного рабочего дня</h5>
-            <div class="inline-block text-[#C08267] border-2 border-solid border-[#C08267] text-[16px] py-[10px] px-[40px] w-fit cursor-pointer">Хорошо</div>
-        </div>
-    </div>
-</div>
-<div class="fixed top-0 left-0 h-screen w-screen bg-[#212123]/[.85] backdrop-blur-[10px]">
+<div class="fixed top-0 left-0 h-screen w-screen hidden z-[100]" id="modal_window_order_photo_ok">
+    <div class="fixed top-0 left-0 h-screen w-screen bg-[#212123]/[.85] backdrop-blur-[10px] close_modal_window_order_photo_ok"></div>
     <div class="overflow-hidden relative w-[540px] h-[250px] fixed top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] bg-[#fff]">
         <div class="blur-[60px] rounded-full h-[100px] w-[100px] bg-[#C08267] absolute top-[-10px] left-[-10px]"></div>
-        <div class="top-[10px] right-[10px] absolute w-[17px] h-[17px] cursor-pointer">
+        <div class="top-[10px] right-[10px] absolute w-[17px] h-[17px] cursor-pointer close_modal_window_order_photo_ok">
             <div class="bg-[#C08267] h-[2px] w-[15px] absolute rotate-[45deg] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"></div>
             <div class="bg-[#C08267] h-[2px] w-[15px] absolute rotate-[-45deg] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"></div>
         </div>
         <div class="flex items-center flex-col top-[50%] left-[50%] absolute translate-x-[-50%] translate-y-[-50%]">
-            <h5 class="inline-block text-[24px] text-center mb-[20px] w-[460px]">Мы рады что вы выбрали нас. Ожидайте звонка в течение одного рабочего дня</h5>
-            <div class="inline-block text-[#C08267] border-2 border-solid border-[#C08267] text-[16px] py-[10px] px-[40px] w-fit cursor-pointer">Хорошо</div>
+            <h5 class="inline-block text-[24px] text-center mb-[20px] w-[460px]">Мы рады что вы выбрали нас. Ожидайте
+                звонка в течение одного рабочего дня</h5>
+            <div class="inline-block text-[#C08267] border-2 border-solid border-[#C08267] text-[16px] py-[10px] px-[40px] w-fit cursor-pointer close_modal_window_order_photo_ok">
+                Хорошо
+            </div>
         </div>
     </div>
 </div>
-<div class="fixed top-0 left-0 h-screen w-screen bg-[#212123]/[.85] backdrop-blur-[10px]">
+<div class="fixed top-0 left-0 h-screen w-screen hidden z-[100]" id="modal_window_order_photo">
+    <div class="fixed top-0 left-0 h-screen w-screen bg-[#212123]/[.85] backdrop-blur-[10px] close_modal_window_order_photo"></div>
     <div class="overflow-hidden relative w-[900px] h-[580px] fixed top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] bg-[#fff]">
         <div class="blur-[60px] rounded-full h-[100px] w-[100px] bg-[#C08267] absolute top-[-10px] left-[-10px]"></div>
-        <div class="top-[10px] right-[10px] absolute w-[17px] h-[17px] cursor-pointer">
+        <div class="top-[10px] right-[10px] absolute w-[17px] h-[17px] cursor-pointer close_modal_window_order_photo">
             <div class="bg-[#C08267] h-[2px] w-[15px] absolute rotate-[45deg] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"></div>
             <div class="bg-[#C08267] h-[2px] w-[15px] absolute rotate-[-45deg] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"></div>
         </div>
         <div class="flex items-center flex-col top-[50%] left-[50%] absolute translate-x-[-50%] translate-y-[-50%]">
             <h5 class="inline-block text-[24px] text-center mb-[20px] w-[460px]">Форма заказа услуги</h5>
-            <form class="flex flex-col items-center w-[560px]">
-                <input type="text" placeholder="Телефон  /  Phone" class="rounded-[2px] bg-white border-[#212123]/[.70] border-[1px] mb-[15px] px-[30px] pt-[13px] pb-[12px] w-[100%]">
-                <input type="text" placeholder="Email" class="rounded-[2px] bg-white border-[#212123]/[.70] border-[1px] mb-[15px] px-[30px] pt-[13px] pb-[12px] w-[100%]">
-                <input type="text" placeholder="Имя  /  Name" class="rounded-[2px] bg-white border-[#212123]/[.70] border-[1px] mb-[15px] px-[30px] pt-[13px] pb-[12px] w-[100%]">
-                <textarea  type="text" placeholder="Сообщение  /  Message" class="rounded-[2px] bg-white border-[#212123]/[.70] border-[1px] mb-[15px] px-[30px] pt-[13px] pb-[12px] h-[170px] w-[100%]"></textarea>
-                <button class="inline-block text-[#C08267] border-2 border-solid border-[#C08267] text-[16px] py-[10px] px-[40px] w-fit cursor-pointer">Заказать</button>
+            <form class="flex flex-col items-center w-[560px]" method="post" id="form_order_service" data-service="">
+                {% csrf_token %}
+                <input id="{{ order_service_form.call.auto_id }}" name="{{ order_service_form.call.name }}" type="phone" placeholder="Телефон  /  Phone"
+                       class="rounded-[2px] bg-white border-[#212123]/[.70] border-[1px] mb-[15px] px-[30px] pt-[13px] pb-[12px] w-[100%]">
+                <input id="{{ order_service_form.email.auto_id }}" name="{{ order_service_form.email.name }}" type="text" placeholder="Email"
+                       class="rounded-[2px] bg-white border-[#212123]/[.70] border-[1px] mb-[15px] px-[30px] pt-[13px] pb-[12px] w-[100%]">
+                <input id="{{ order_service_form.name.auto_id }}" name="{{ order_service_form.name.name }}" type="text" placeholder="Имя  /  Name"
+                       class="rounded-[2px] bg-white border-[#212123]/[.70] border-[1px] mb-[15px] px-[30px] pt-[13px] pb-[12px] w-[100%]">
+                <textarea id="{{ order_service_form.message.auto_id }}" name="{{ order_service_form.message.name }}" type="text" placeholder="Сообщение  /  Message"
+                          class="rounded-[2px] bg-white border-[#212123]/[.70] border-[1px] mb-[15px] px-[30px] pt-[13px] pb-[12px] h-[170px] w-[100%]"></textarea>
+                <button type="submit"
+                        class="inline-block text-[#C08267] border-[1px] border-solid border-[#C08267] text-[16px] py-[10px] px-[40px] w-fit cursor-pointer open_modal_window_order_photo_ok close_modal_window_order_photo">
+                    Заказать
+                </button>
             </form>
         </div>
     </div>
 </div>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
 <script type="module" src="{% static 'photo_galirey/js/index.js' %}"></script>
 {% include  'photo_galirey/footer.html' %}

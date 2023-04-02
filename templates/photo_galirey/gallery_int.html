@@ -10,7 +10,7 @@
          {% endfor %}
 
     </div>
-    {% if review %}
+    {% if review and review.publication %}
     <div class="flex flex-col mt-[60px]">
         <h4 class="mb-[25px] text-[25px]">Отзывы от клиента</h4>
         <div class="">
@@ -25,6 +25,40 @@
                 </div>
             </div>
             <div>{{ review.review|truncatechars:140 }} <a href="{{ review.get_absolute_url }}" class="text-[#C08267] cursor-pointer">Подробнее</a></div>
+        </div>
+    </div>
+    {% else %}
+    <section class="flex mt-[60px] flex-col justify-between">
+        <h3 class="mb-[15px] text-[25px]">Оставить отзыв</h3>
+        <form class="flex flex-col" method="post" id="form_write_review" data-gallery="{{ gallery_int.pk }}">
+            {% csrf_token %}
+            <input id="{{ write_review_form.social_networks.auto_id }}" name="{{ write_review_form.social_networks.name }}" type="text" placeholder="Ссылка на соц есть для связи  /  VK, Instagram, Facebook"
+                   class="w-[60%] rounded-[2px] bg-white border-[#212123]/[.70] border-[1px] mb-[15px] px-[30px] pt-[13px] pb-[12px]">
+            <input id="{{ write_review_form.name_reviewer.auto_id }}" name="{{ write_review_form.name_reviewer.name }}" type="text" placeholder="Имя  /  Name"
+                   class="w-[40%] rounded-[2px] bg-white border-[#212123]/[.70] border-[1px] mb-[15px] px-[30px] pt-[13px] pb-[12px]">
+            <textarea id="{{ write_review_form.review.auto_id }}" name="{{ write_review_form.review.name }}" type="text" placeholder="Отзыв  /  Review"
+                      class="rounded-[2px] bg-white border-[#212123]/[.70] border-[1px] mb-[15px] px-[30px] pt-[13px] pb-[12px] h-[170px]"></textarea>
+            <button type="submit"
+                    class="rounded-[2px] border-[#C08267] border-[1px] text-[#C08267] px-[18px] pt-[11px] pb-[12px] w-fit open_modal_window_send_review_ok">
+                Отправить
+            </button>
+        </form>
+
+    </section>
+    <div class="fixed top-0 left-0 h-screen w-screen hidden z-[100]" id="modal_window_send_review_ok">
+        <div class="fixed top-0 left-0 h-screen w-screen bg-[#212123]/[.85] backdrop-blur-[10px] close_modal_window_send_review_ok"></div>
+        <div class="overflow-hidden relative w-[540px] h-[200px] fixed top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] bg-[#fff] ">
+            <div class="blur-[60px] rounded-full h-[100px] w-[100px] bg-[#C08267] absolute top-[-10px] left-[-10px]"></div>
+            <div class="top-[10px] right-[10px] absolute w-[17px] h-[17px] cursor-pointer close_modal_window_send_review_ok">
+                <div class="bg-[#C08267] h-[2px] w-[15px] absolute rotate-[45deg] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"></div>
+                <div class="bg-[#C08267] h-[2px] w-[15px] absolute rotate-[-45deg] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"></div>
+            </div>
+            <div class="flex items-center flex-col top-[50%] left-[50%] absolute translate-x-[-50%] translate-y-[-50%]">
+                <h5 class="inline-block text-[24px] text-center mb-[20px] w-[460px]">Мы рады что вы оставили свой отзыв, он будет добавлен после модерации</h5>
+                <div class="inline-block text-[#C08267] border-2 border-solid border-[#C08267] text-[16px] py-[10px] px-[40px] w-fit cursor-pointer close_modal_window_send_review_ok">
+                    Хорошо
+                </div>
+            </div>
         </div>
     </div>
     {% endif %}
