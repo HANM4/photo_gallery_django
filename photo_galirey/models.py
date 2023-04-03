@@ -32,6 +32,9 @@ class HashtagsName(models.Model):
     def __str__(self):
         return self.hashtag
 
+    def get_absolute_url(self):
+        return reverse('hashtag', kwargs={'hashtags_id': self.pk})
+
 
 class Hashtags(models.Model):
     gallery = models.ForeignKey(Gallery, on_delete=models.CASCADE)

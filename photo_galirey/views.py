@@ -4,6 +4,7 @@ from .models import *
 from .forms import *
 
 hashtags_name_db = HashtagsName.objects.all()
+hashtags_db = Hashtags.objects.all()
 gallery_db = Gallery.objects.all()
 imgs_gallery_db = Img.objects.all()
 services_db = Services.objects.all()
@@ -97,7 +98,8 @@ def gallery(request):
         "hashtags_name": hashtags_name_db,
         "gallery": gallery_db,
         "menu_activ": "Портфолио",
-        "menu": MENU
+        "menu": MENU,
+        "hashtags_selected_id": 0
     }
     data["page_name"] = data["menu"][data["menu_activ"]]
     return render(request, 'photo_galirey/galirey.html', context=data)
@@ -159,3 +161,18 @@ def review_int(request, review_id):
     }
     data["page_name"] = data["menu"][data["menu_activ"]]
     return render(request, 'photo_galirey/review_int.html', context=data)
+
+
+def show_hashtags(request, hashtags_id):
+    show_hashtag_pk = get_object_or_404(hashtags_name_db, pk=hashtags_id)
+    data = {
+        "hashtags_name": hashtags_name_db,
+        "hashtags": hashtags_db.filter(hashtag=hashtags_id),
+        "hashtags_selected_id": hashtags_id,
+        "menu_activ": "Портфолио",
+        "menu": MENU
+    }
+    data["page_name"] = data["menu"][data["menu_activ"]]
+    return render(request, 'photo_galirey/galirey.html', context=data)
+
+

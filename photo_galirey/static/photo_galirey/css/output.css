@@ -935,10 +935,6 @@ h1,h2,h3,h4,h5,h6 {
   height: 100vh;
 }
 
-.max-h-\[100vh\] {
-  max-height: 100vh;
-}
-
 .max-h-\[500px\] {
   max-height: 500px;
 }
@@ -1662,17 +1658,12 @@ h1,h2,h3,h4,h5,h6 {
   opacity: .80;
 }
 
-.focus\:outline-none:focus {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
+.group:focus-within .group-focus-within\:flex {
+  display: flex;
 }
 
 .group:hover .group-hover\:inline-block {
   display: inline-block;
-}
-
-.group:focus .group-focus\:flex {
-  display: flex;
 }
 
 @media (min-width: 640px) {
