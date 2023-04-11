@@ -585,6 +585,10 @@ h1,h2,h3,h4,h5,h6 {
   right: 20px;
 }
 
+.right-\[40px\] {
+  right: 40px;
+}
+
 .right-\[50\%\] {
   right: 50%;
 }
@@ -613,6 +617,10 @@ h1,h2,h3,h4,h5,h6 {
   top: 45%;
 }
 
+.top-\[45px\] {
+  top: 45px;
+}
+
 .top-\[50\%\] {
   top: 50%;
 }
@@ -635,6 +643,10 @@ h1,h2,h3,h4,h5,h6 {
 
 .z-\[50\] {
   z-index: 50;
+}
+
+.m-auto {
+  margin: auto;
 }
 
 .mx-\[30px\] {
@@ -683,6 +695,10 @@ h1,h2,h3,h4,h5,h6 {
   margin-bottom: 1.5rem;
 }
 
+.mb-\[10px\] {
+  margin-bottom: 10px;
+}
+
 .mb-\[12px\] {
   margin-bottom: 12px;
 }
@@ -703,8 +719,16 @@ h1,h2,h3,h4,h5,h6 {
   margin-bottom: 25px;
 }
 
+.mb-\[30px\] {
+  margin-bottom: 30px;
+}
+
 .mb-\[35px\] {
   margin-bottom: 35px;
+}
+
+.mb-\[40px\] {
+  margin-bottom: 40px;
 }
 
 .mb-\[5px\] {
@@ -717,6 +741,14 @@ h1,h2,h3,h4,h5,h6 {
 
 .mb-\[80px\] {
   margin-bottom: 80px;
+}
+
+.ml-\[16px\] {
+  margin-left: 16px;
+}
+
+.ml-\[20px\] {
+  margin-left: 20px;
 }
 
 .ml-\[4px\] {
@@ -741,10 +773,6 @@ h1,h2,h3,h4,h5,h6 {
 
 .mr-\[25px\] {
   margin-right: 25px;
-}
-
-.mr-\[300px\] {
-  margin-right: 300px;
 }
 
 .mr-\[8px\] {
@@ -775,12 +803,20 @@ h1,h2,h3,h4,h5,h6 {
   margin-top: 1.5rem;
 }
 
-.mt-\[12px\] {
-  margin-top: 12px;
+.mt-\[100px\] {
+  margin-top: 100px;
+}
+
+.mt-\[10px\] {
+  margin-top: 10px;
 }
 
 .mt-\[200px\] {
   margin-top: 200px;
+}
+
+.mt-\[20px\] {
+  margin-top: 20px;
 }
 
 .mt-\[30px\] {
@@ -789,10 +825,6 @@ h1,h2,h3,h4,h5,h6 {
 
 .mt-\[60px\] {
   margin-top: 60px;
-}
-
-.mt-\[6px\] {
-  margin-top: 6px;
 }
 
 .mt-\[80px\] {
@@ -863,10 +895,6 @@ h1,h2,h3,h4,h5,h6 {
   height: 1px;
 }
 
-.h-\[2\.7rem\] {
-  height: 2.7rem;
-}
-
 .h-\[200px\] {
   height: 200px;
 }
@@ -893,6 +921,10 @@ h1,h2,h3,h4,h5,h6 {
 
 .h-\[380px\] {
   height: 380px;
+}
+
+.h-\[3px\] {
+  height: 3px;
 }
 
 .h-\[400px\] {
@@ -931,6 +963,11 @@ h1,h2,h3,h4,h5,h6 {
   height: 72px;
 }
 
+.h-fit {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 .h-screen {
   height: 100vh;
 }
@@ -945,6 +982,14 @@ h1,h2,h3,h4,h5,h6 {
 
 .min-h-\[100\%\] {
   min-height: 100%;
+}
+
+.min-h-\[44px\] {
+  min-height: 44px;
+}
+
+.w-1\/3 {
+  width: 33.333333%;
 }
 
 .w-4 {
@@ -991,6 +1036,10 @@ h1,h2,h3,h4,h5,h6 {
   width: 220px;
 }
 
+.w-\[25px\] {
+  width: 25px;
+}
+
 .w-\[30\%\] {
   width: 30%;
 }
@@ -1007,16 +1056,8 @@ h1,h2,h3,h4,h5,h6 {
   width: 40px;
 }
 
-.w-\[414\.666666px\] {
-  width: 414.666666px;
-}
-
 .w-\[460px\] {
   width: 460px;
-}
-
-.w-\[50\%\] {
-  width: 50%;
 }
 
 .w-\[500px\] {
@@ -1055,14 +1096,6 @@ h1,h2,h3,h4,h5,h6 {
   width: 610px;
 }
 
-.w-\[650px\] {
-  width: 650px;
-}
-
-.w-\[700px\] {
-  width: 700px;
-}
-
 .w-\[72px\] {
   width: 72px;
 }
@@ -1080,6 +1113,11 @@ h1,h2,h3,h4,h5,h6 {
   width: 100%;
 }
 
+.w-max {
+  width: -moz-max-content;
+  width: max-content;
+}
+
 .w-screen {
   width: 100vw;
 }
@@ -1088,12 +1126,24 @@ h1,h2,h3,h4,h5,h6 {
   min-width: 100%;
 }
 
+.min-w-\[16px\] {
+  min-width: 16px;
+}
+
+.min-w-\[44px\] {
+  min-width: 44px;
+}
+
 .max-w-7xl {
   max-width: 80rem;
 }
 
 .max-w-\[1070px\] {
   max-width: 1070px;
+}
+
+.max-w-\[800px\] {
+  max-width: 800px;
 }
 
 .max-w-\[89\%\] {
@@ -1264,6 +1314,11 @@ h1,h2,h3,h4,h5,h6 {
   background-color: rgb(33 33 35 / .85);
 }
 
+.bg-\[\#69605A\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(105 96 90 / var(--tw-bg-opacity));
+}
+
 .bg-\[\#C08267\] {
   --tw-bg-opacity: 1;
   background-color: rgb(192 130 103 / var(--tw-bg-opacity));
@@ -1278,13 +1333,18 @@ h1,h2,h3,h4,h5,h6 {
   background-color: rgb(255 255 255 / .88);
 }
 
+.bg-\[\#ffffff\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
-.bg-black\/\[\.65\] {
-  background-color: rgb(0 0 0 / .65);
+.bg-black\/\[\.50\] {
+  background-color: rgb(0 0 0 / .50);
 }
 
 .bg-white {
@@ -1296,8 +1356,26 @@ h1,h2,h3,h4,h5,h6 {
   background-color: rgb(255 255 255 / .88);
 }
 
+.bg-opacity-\[\.50\] {
+  --tw-bg-opacity: .50;
+}
+
 .bg-opacity-\[\.73\] {
   --tw-bg-opacity: .73;
+}
+
+.bg-gradient-to-t {
+  background-image: linear-gradient(to top, var(--tw-gradient-stops));
+}
+
+.from-\[\#CCB9B1\]\/\[\.22\] {
+  --tw-gradient-from: rgb(204 185 177 / .22);
+  --tw-gradient-to: rgb(204 185 177 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-\[\#fff\] {
+  --tw-gradient-to: #fff;
 }
 
 .bg-cover {
@@ -1306,6 +1384,10 @@ h1,h2,h3,h4,h5,h6 {
 
 .bg-center {
   background-position: center;
+}
+
+.bg-right {
+  background-position: right;
 }
 
 .object-cover {
@@ -1355,11 +1437,6 @@ h1,h2,h3,h4,h5,h6 {
 .px-\[30px\] {
   padding-left: 30px;
   padding-right: 30px;
-}
-
-.px-\[38px\] {
-  padding-left: 38px;
-  padding-right: 38px;
 }
 
 .px-\[40px\] {
@@ -1414,6 +1491,10 @@ h1,h2,h3,h4,h5,h6 {
   padding-bottom: 12px;
 }
 
+.pb-\[20px\] {
+  padding-bottom: 20px;
+}
+
 .pb-\[60px\] {
   padding-bottom: 60px;
 }
@@ -1424,6 +1505,10 @@ h1,h2,h3,h4,h5,h6 {
 
 .pr-2 {
   padding-right: 0.5rem;
+}
+
+.pr-\[20px\] {
+  padding-right: 20px;
 }
 
 .pt-2 {
@@ -1448,6 +1533,10 @@ h1,h2,h3,h4,h5,h6 {
 
 .pt-\[45px\] {
   padding-top: 45px;
+}
+
+.pt-\[50px\] {
+  padding-top: 50px;
 }
 
 .pt-\[60px\] {
@@ -1696,8 +1785,80 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 @media (min-width: 1024px) {
+  .lg\:mb-0 {
+    margin-bottom: 0px;
+  }
+
+  .lg\:mr-\[40px\] {
+    margin-right: 40px;
+  }
+
+  .lg\:mr-\[8px\] {
+    margin-right: 8px;
+  }
+
+  .lg\:inline-block {
+    display: inline-block;
+  }
+
+  .lg\:flex {
+    display: flex;
+  }
+
+  .lg\:grid {
+    display: grid;
+  }
+
+  .lg\:hidden {
+    display: none;
+  }
+
+  .lg\:h-0 {
+    height: 0px;
+  }
+
+  .lg\:w-0 {
+    width: 0px;
+  }
+
+  .lg\:w-1\/3 {
+    width: 33.333333%;
+  }
+
+  .lg\:w-\[40\%\] {
+    width: 40%;
+  }
+
+  .lg\:w-\[50\%\] {
+    width: 50%;
+  }
+
+  .lg\:w-\[650px\] {
+    width: 650px;
+  }
+
   .lg\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lg\:flex-row {
+    flex-direction: row;
+  }
+
+  .lg\:items-start {
+    align-items: flex-start;
+  }
+
+  .lg\:justify-start {
+    justify-content: flex-start;
+  }
+
+  .lg\:justify-end {
+    justify-content: flex-end;
+  }
+
+  .lg\:text-start {
+    text-align: start;
   }
 }
 
