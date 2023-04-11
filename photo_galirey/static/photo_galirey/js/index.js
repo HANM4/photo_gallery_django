@@ -1,9 +1,13 @@
 import {activ_or_unactiv_elements} from './interactive_list.js';
 import {use_modal_window} from './modal_window.js';
+import {auto_scroll} from './auto_scroll.js';
 
 
 let list_services = activ_or_unactiv_elements('services_button_open', 'services_list_activ', 'services_list_unactiv', 'services_buttons_close');
 let list_faq = activ_or_unactiv_elements('faq_button_open', 'faq_list_activ', 'faq_list_unactiv', 'faq_buttons_close');
+
+
+let scroll_service = auto_scroll('scroll_service', 'button_scroll_service');
 
 
 let use_modal_window_order_photo = use_modal_window('modal_window_order_photo', 'close_modal_window_order_photo', 'open_modal_window_order_photo', false, 'data-service');
