@@ -1,5 +1,6 @@
 import {use_modal_window} from './modal_window.js';
 
+let use_modal_window_address = use_modal_window('modal_window_address', 'close_modal_window_address', 'open_modal_window_address');
 
 $(document).on('submit','#form_order_bell',function(e){
     e.preventDefault();

@@ -1310,6 +1310,10 @@ h1,h2,h3,h4,h5,h6 {
   background-color: rgb(33 33 35 / .75);
 }
 
+.bg-\[\#212123\]\/\[\.84\] {
+  background-color: rgb(33 33 35 / .84);
+}
+
 .bg-\[\#212123\]\/\[\.85\] {
   background-color: rgb(33 33 35 / .85);
 }

@@ -36,11 +36,14 @@
 <section>
     <div class="relative">
         <span>
-            <img src="{% static 'photo_galirey/img/map_point.svg' %}" alt="" class="cursor-pointer absolute top-[30%] left-[40%] w-[50px] hover:w-[60px] hover:-translate-x-[5px] hover:-translate-y-[10px]">
+            <img src="{% static 'photo_galirey/img/map_point.svg' %}" alt="" class="cursor-pointer absolute top-[30%] left-[40%] w-[50px] hover:w-[60px] hover:-translate-x-[5px] hover:-translate-y-[10px] open_modal_window_address">
         </span>
         <img src="{% static 'photo_galirey/img/map.png' %}" alt="" class="h-[650px] object-cover">
-        <div class="shadow-lg absolute top-[30%] left-[45%] bg-white p-[60px]">
-            <img src="{% static 'photo_galirey/img/close_icon.svg' %}" alt="" class="absolute top-[20px] right-[20px] cursor-pointer">
+        <div class="shadow-lg absolute top-[30%] left-[45%] bg-white p-[60px]" id="modal_window_address">
+            <div class="top-[10px] right-[10px] absolute w-[17px] h-[17px] absolute cursor-pointer close_modal_window_address">
+                <div class="bg-[#212123]/[.84] h-[2px] w-[15px] absolute rotate-[45deg] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-[2px]"></div>
+                <div class="bg-[#212123]/[.84] h-[2px] w-[15px] absolute rotate-[-45deg] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-[2px]"></div>
+            </div>
             <div class="">
                 <div class="flex mb-[15px]">
                     <img src="{% static 'photo_galirey/img/map.svg' %}" alt="" class="mr-[10px]">
