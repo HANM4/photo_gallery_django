@@ -1,10 +1,10 @@
 {% load static %}
 {% include 'photo_galirey/header.html' %}
 <section class="flex  flex-col px-[30px] pt-24 mx-auto max-w-[1070px] items-center">
-    <div class="flex flex-wrap justify-between">
+    <div class="grid lg:grid-cols-2 grid-cols-1 gap-x-6 gap-y-12">
         {% for i in review %}
         {% if i.publication %}
-        <div class="w-[525px] mb-[80px]">
+        <div class="w-[500px] mb-[80px]">
             <div class="flex mb-[20px]">
                 <div class="w-[72px] h-[72px] rounded-full overflow-hidden mr-[15px]">
                     <img src="{{ i.img_reviewer.url }}" alt="" class="object-cover min-h-[100%] min-w-[100%]">

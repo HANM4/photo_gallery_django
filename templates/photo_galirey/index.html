@@ -201,7 +201,7 @@
 </section>
 <div class="fixed top-0 left-0 h-screen w-screen hidden z-[100]" id="modal_window_order_photo_ok">
     <div class="fixed top-0 left-0 h-screen w-screen bg-[#212123]/[.85] backdrop-blur-[10px] close_modal_window_order_photo_ok"></div>
-    <div class="overflow-hidden relative w-[540px] h-[250px] fixed top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] bg-[#fff]">
+    <div class="overflow-hidden relative w-[100%] lg:w-[540px] h-[250px] fixed top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] bg-[#fff]">
         <div class="blur-[60px] rounded-full h-[100px] w-[100px] bg-[#C08267] absolute top-[-10px] left-[-10px]"></div>
         <div class="top-[10px] right-[10px] absolute w-[17px] h-[17px] cursor-pointer close_modal_window_order_photo_ok">
             <div class="bg-[#C08267] h-[2px] w-[15px] absolute rotate-[45deg] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-[2px]"></div>
@@ -216,17 +216,17 @@
         </div>
     </div>
 </div>
-<div class="fixed top-0 left-0 h-screen w-screen hidden z-[100]" id="modal_window_order_photo">
+<div class="fixed hidden top-0 left-0 h-screen w-screen z-[100]" id="modal_window_order_photo">
     <div class="fixed top-0 left-0 h-screen w-screen bg-[#212123]/[.85] backdrop-blur-[10px] close_modal_window_order_photo"></div>
-    <div class="overflow-hidden relative w-[900px] h-[580px] fixed top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] bg-[#fff]">
+    <div class="overflow-hidden overflow-y-auto;  relative w-[100%] lg:w-[900px] max-h-[80vh] h-auto fixed top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] bg-[#fff]">
         <div class="blur-[60px] rounded-full h-[100px] w-[100px] bg-[#C08267] absolute top-[-10px] left-[-10px]"></div>
         <div class="top-[10px] right-[10px] absolute w-[17px] h-[17px] cursor-pointer close_modal_window_order_photo">
             <div class="bg-[#C08267] h-[2px] w-[15px] absolute rotate-[45deg] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-[2px]"></div>
             <div class="bg-[#C08267] h-[2px] w-[15px] absolute rotate-[-45deg] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-[2px]"></div>
         </div>
-        <div class="flex items-center flex-col top-[50%] left-[50%] absolute translate-x-[-50%] translate-y-[-50%]">
+        <div class="flex items-center flex-col py-[50px]">
             <h5 class="inline-block text-[24px] text-center mb-[20px] w-[460px]">Форма заказа услуги</h5>
-            <form class="flex flex-col items-center w-[560px]" method="post" id="form_order_service" data-service="">
+            <form class="flex flex-col items-center min-w-[560px]" method="post" id="form_order_service" data-service="">
                 {% csrf_token %}
                 <input id="{{ order_service_form.call.auto_id }}" name="{{ order_service_form.call.name }}" type="phone" placeholder="Телефон  /  Phone"
                        class="rounded-[2px] bg-white border-[#212123]/[.70] border-[1px] mb-[15px] px-[30px] pt-[13px] pb-[12px] w-[100%]">
