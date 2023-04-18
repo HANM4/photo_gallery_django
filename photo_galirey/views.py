@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseNotFound, JsonResponse
 from .models import *
+from .business_logic import *
 from .forms import *
 from django.core.paginator import Paginator
 
@@ -12,6 +13,8 @@ services_db = Services.objects.all()
 specifics_services_db = SpecificsServices.objects.all()
 faq_db = FAQ.objects.all()
 review_db = Review.objects.all()
+email_users_bd = EmailSendUsers.objects.all()
+
 
 MENU = {
     'Главная': 'home',
@@ -27,11 +30,17 @@ def order_call_answer(request):
     if request.method == 'POST':
         order_call_form = OrderCallForm(request.POST)
         if order_call_form.is_valid():
-            print(request.POST.get('call'))
-            print(request.POST.get('name'))
-            print(request.POST.get('message'))
+            call = request.POST.get('call')
+            name = request.POST.get('name')
+            message = request.POST.get('message')
+            print(call)
+            print(name)
+            print(message)
             try:
                 order_call_form.save()
+                messeg = f'Уведомление!!! Новый заказ звонка был сохранен в админ панель.\nНомер телефона:{call}\nИмя:{name}\nСообщение:{message}'
+                for i in email_users_bd:
+                    send_email_of_site(i.from_email, i.to_email, messeg.encode('utf-8'), i.password, i.smtp_host)
             except:
                 order_call_form.add_error(None, 'Данные не были добавлены в БД')
                 print(order_call_form.errors)
@@ -46,12 +55,19 @@ def write_review_form_answer(request):
     if request.method == 'POST':
         write_review_form = WriteReviewForm(request.POST)
         if write_review_form.is_valid():
-            print(request.POST.get('name_reviewer'))
-            print(request.POST.get('social_networks'))
-            print(request.POST.get('review'))
-            print(request.POST.get('gallery'))
+            name_reviewer = request.POST.get('name_reviewer')
+            social_networks = request.POST.get('social_networks')
+            review = request.POST.get('review')
+            gallery = request.POST.get('gallery')
+            print(name_reviewer)
+            print(social_networks)
+            print(review)
+            print(gallery)
             try:
                 write_review_form.save()
+                messeg = f'Уведомление!!! Новый отзыв был сохранен в админ панель.\nИмя:{name_reviewer}\nОтзыв:{review}\nСсылка на соцсеть для связи:{social_networks}\nКод услуги:{gallery}'
+                for i in email_users_bd:
+                    send_email_of_site(i.from_email, i.to_email, messeg.encode('utf-8'), i.password, i.smtp_host)
             except:
                 write_review_form.add_error(None, 'Данные не были добавлены в БД')
                 print(write_review_form.errors)
@@ -66,13 +82,21 @@ def order_service_form_answer(request):
     if request.method == 'POST':
         order_service_form = OrderServiceForm(request.POST)
         if order_service_form.is_valid():
-            print(request.POST.get('call'))
-            print(request.POST.get('service'))
-            print(request.POST.get('name'))
-            print(request.POST.get('email'))
-            print(request.POST.get('message'))
+            call = request.POST.get('call')
+            service = request.POST.get('service')
+            name = request.POST.get('name')
+            email = request.POST.get('email')
+            message = request.POST.get('message')
+            print(call)
+            print(service)
+            print(name)
+            print(email)
+            print(message)
             try:
                 order_service_form.save()
+                messeg = f'Уведомление!!! Новая заказанная услуга была сохранена в админ панель.\nИмя:{name}\nEmail:{email}\nНомер телефона:{call}\nКод услуги:{service}\nСообщение: {message}'
+                for i in email_users_bd:
+                    send_email_of_site(i.from_email, i.to_email, messeg.encode('utf-8'), i.password, i.smtp_host)
             except:
                 order_service_form.add_error(None, 'Данные не были добавлены в БД')
                 print(order_service_form.errors)

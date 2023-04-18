@@ -174,3 +174,18 @@ class OrderCall(models.Model):
         verbose_name = 'Заказанные звонки'
         verbose_name_plural = 'Заказанные звонки'
         ordering = ['id']
+
+
+class EmailSendUsers(models.Model):
+    from_email = models.EmailField(verbose_name='Электронная почта отправки')
+    to_email = models.EmailField(verbose_name='Электронная почта приема')
+    password = models.CharField(max_length=50, verbose_name='Пароль для почты отправки')
+    smtp_host = models.CharField(max_length=50, verbose_name='SMTP хост')
+
+    def __str__(self):
+        return self.from_email
+
+    class Meta:
+        verbose_name = 'Данные email почты для отправки'
+        verbose_name_plural = 'Данные email почт для отправки'
+        ordering = ['id']

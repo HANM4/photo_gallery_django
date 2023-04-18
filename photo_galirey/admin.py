@@ -127,6 +127,12 @@ class OrderCallAdmin(admin.ModelAdmin):
     search_fields = ('id',)
 
 
+class EmailSendUsersAdmin(admin.ModelAdmin):
+    list_display = ('id', 'from_email', 'to_email', 'password', 'smtp_host')
+    list_display_links = ('id', 'from_email',)
+    search_fields = ('id',)
+
+
 admin.site.register(Gallery, GalleryAdmin)
 admin.site.register(Img, ImgAdmin)
 admin.site.register(HashtagsName, HashtagsNameAdmin)
@@ -137,6 +143,7 @@ admin.site.register(FAQ, FAQAdmin)
 admin.site.register(Review, ReviewAdmin)
 admin.site.register(OrderService, OrderServiceAdmin)
 admin.site.register(OrderCall, OrderCallAdmin)
+admin.site.register(EmailSendUsers, EmailSendUsersAdmin)
 
 
 admin.site.site_title = 'Админ-панель сайта Данила Селиния'
