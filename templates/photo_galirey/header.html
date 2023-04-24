@@ -9,6 +9,7 @@
 
 
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
     <title>
         {% if gallery_int %}
             {{ gallery_int.name_work }}
@@ -23,7 +24,7 @@
 <header>
     <div class="max-h-[500px] overflow-hidden text-white">
         <div class="relative h-[500px]">
-            <div class="flex pt-[45px] py-5 justify-between w-full absolute z-[50] px-10">
+            <div class="flex pt-[45px] py-5 justify-between w-full absolute z-[50] px-[16px] sm:px-[40px]">
                 <a class="font-medium cursor-pointer" href="{% url 'home' %}">
                     <span class="text-[25px] font-italictext">Disipion Salinia</span>
                 </a>
@@ -43,7 +44,7 @@
                 </nav>
             </div>
             <div class="flex flex-col w-full items-center text-white absolute top-[45%] z-[30]">
-                <span class="text-6xl font-['Yeseva_One']">Данил Салиния</span>
+                <span class="text-4xl sm:text-6xl font-['Yeseva_One']">Данил Салиния</span>
                 <span class="mt-2 mt-3 flex">
                     {% if gallery_int %}
                         <a href="{% url page_name %}"><span class="cursor-pointer">{{ menu_activ }}</span></a>
@@ -52,37 +53,15 @@
                     {% elif review_int %}
                         <a href="{% url page_name %}"><span class="cursor-pointer">{{ menu_activ }}</span></a>
                         <span class="mx-[5px]"> > </span>
-                        <h1 class="font-['Comfortaa'] cursor-pointer" >{{ review_int.name_reviewer }} о альбоме {{ review_int.gallery.name_work }}</h1>
+                        <h1 class="font-['Comfortaa'] cursor-pointer" >{{ review_int.name_reviewer }}</h1>
                     {% else %}
                     <a href="{% url page_name %}"><h1 class="font-['Comfortaa'] cursor-pointer"> {{ menu_activ }} </h1></a>
                     {% endif %}
                 </span>
             </div>
             <div class="bg-[#212123]/[.75]  w-[100%] absolute top-0 z-[20] h-[100%]"></div>
-            <video src="{% static 'photo_galirey/video/background_video.mp4' %}" poster="{% static 'photo_galirey/img/background_image_header_galirey.png' %}" muted loop autoplay class="w-[100%] h-[100%] absolute top-0 object-cover"></video>
+            <video src="{% static 'photo_galirey/video/background_video.mp4' %}" poster="{% static 'photo_galirey/img/background_image_header_galirey-min.png' %}" muted loop autoplay class="w-[100%] h-[100%] absolute top-0 object-cover"></video>
         </div>
     </div>
 </header>
-<div id="modal_window_menu" class="hidden">
-    <div class="bg-[#69605A] bg-opacity-[.50] backdrop-blur-[10px] z-[100] h-[100%] w-[60%] top-0 left-0 fixed close_modal_window_menu"></div>
-    <div class="bg-[#69605A] backdrop-blur-[10px] h-[100%] w-[40%] fixed z-[100] top-0 right-0 text-white">
-        <div class="top-[45px] right-[40px] absolute w-[17px] h-[17px] cursor-pointer close_modal_window_menu">
-            <div class="bg-[#fff] h-[3px] w-[25px] absolute rotate-[45deg] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-[2px]"></div>
-            <div class="bg-[#fff] h-[3px] w-[25px] absolute rotate-[-45deg] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-[2px]"></div>
-        </div>
-        <div class="flex flex-col items-center mt-[100px] ">
-            <a class="font-medium  close_modal_window_menu" href="{% url 'home' %}">
-                <span class="text-[25px] font-italictext">Disipion Salinia</span>
-            </a>
-            <nav class="flex flex-col items-center justify-between w-[30%] w-fit">
-                {% for key, val in menu.items %}
-                    {% if menu_activ == key %}
-                        <a href="{% url val %}" class="cursor-pointer border-b-2 border-white mt-[20px] close_modal_window_menu">{{ key }}</a>
-                    {% else %}
-                        <a href="{% url val %}" class="cursor-pointer hover:opacity-[.80] mt-[20px] close_modal_window_menu">{{ key }}</a>
-                    {% endif %}
-                {% endfor %}
-            </nav>
-        </div>
-    </div>
-</div>
+{% include  'photo_galirey/modal_window_menu.html' %}

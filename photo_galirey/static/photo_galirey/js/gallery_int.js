@@ -9,13 +9,13 @@ function assignment_index(class_slids){
 };
 
 let slids = assignment_index('oneclick_open_slider');
-let slider_modal_window = use_modal_window('slider', 'oneclick_close_slider', 'oneclick_open_slider', true);
+let slider_modal_window = use_modal_window('slider', 'but_close_slider', 'oneclick_open_slider', true);
 
 $('.oneclick_open_slider').on('click', function(){
     let slider_gallery = use_slider('slider_arrows_left', 'slider_arrows_right', 'slider_track', 'oneclick_open_slider', 'slider');
 });
 
-$('.oneclick_close_slider').on('click', function(){
+$('.but_close_slider').on('click', function(){
     off_slider_manage('slider_arrows_left', 'slider_arrows_right');
 });
 

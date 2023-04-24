@@ -1,10 +1,10 @@
 {% load static %}
 {% include 'photo_galirey/header.html' %}
-<section class="flex  flex-col px-[30px] pt-24 mx-auto max-w-[1070px] items-center">
+<section class="flex  flex-col px-[16px] sm:px-[30px] pt-24 mx-auto max-w-[1070px] items-center">
     <div class="grid lg:grid-cols-2 grid-cols-1 gap-x-6 gap-y-12">
         {% for i in review %}
         {% if i.publication %}
-        <div class="w-[500px] mb-[80px]">
+        <div class="w-[100%] sm:w-[500px] mb-[80px]">
             <div class="flex mb-[20px]">
                 <div class="w-[72px] h-[72px] rounded-full overflow-hidden mr-[15px]">
                     <img src="{{ i.img_reviewer.url }}" alt="" class="object-cover min-h-[100%] min-w-[100%]">
@@ -15,8 +15,7 @@
                     <a href="{{ i.social_networks }}" class="text-[#C08267]">@социальная сеть</a>
                 </div>
             </div>
-            <div>{{ i.review|truncatechars:140 }} <a href="{{ i.get_absolute_url }}"
-                                                     class="text-[#C08267] cursor-pointer">Подробнее</a></div>
+            <div>{{ i.review|truncatechars:140 }} <a href="{{ i.get_absolute_url }}" class="text-[#C08267] cursor-pointer">Подробнее</a></div>
         </div>
         {% endif %}
         {% endfor %}

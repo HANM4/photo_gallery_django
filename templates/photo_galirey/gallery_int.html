@@ -1,6 +1,6 @@
 {% load static %}
 {% include 'photo_galirey/header.html' %}
-<section class="flex-col px-[30px] py-24 mx-auto max-w-7xl">
+<section class="flex-col px-[16px] sm:px-[30px] py-[40px] mx-auto max-w-7xl">
      <div class="grid 2xl:grid-cols-3 xl:grid-cols-3 lg:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-x-6 gap-y-12 w-full">
 
         {% for i in imgs_gallery %}
@@ -45,16 +45,16 @@
         </form>
 
     </section>
-    <div class="fixed top-0 left-0 h-screen hidden w-screen z-[100]" id="modal_window_send_review_ok">
+    <div class="fixed hidden top-0 left-0 h-screen w-screen z-[100]" id="modal_window_send_review_ok">
         <div class="fixed top-0 left-0 h-screen w-screen bg-[#212123]/[.85] backdrop-blur-[10px] close_modal_window_send_review_ok"></div>
-        <div class="overflow-hidden relative w-[100%] lg:w-[540px] h-[200px] fixed top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] bg-[#fff] ">
+        <div class="overflow-hidden relative w-[100%] lg:w-[540px] h-[80vh] sm:h-[200px] fixed top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] bg-[#fff] ">
             <div class="blur-[60px] rounded-full h-[100px] w-[100px] bg-[#C08267] absolute top-[-10px] left-[-10px]"></div>
             <div class="top-[10px] right-[10px] absolute w-[17px] h-[17px] cursor-pointer close_modal_window_send_review_ok">
                 <div class="bg-[#C08267] h-[2px] w-[15px] absolute rotate-[45deg] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-[2px]"></div>
                 <div class="bg-[#C08267] h-[2px] w-[15px] absolute rotate-[-45deg] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-[2px]"></div>
             </div>
-            <div class="flex items-center flex-col top-[50%] left-[50%] absolute translate-x-[-50%] translate-y-[-50%]">
-                <h5 class="inline-block text-[24px] text-center mb-[20px] w-[460px]">Мы рады что вы оставили свой отзыв, он будет добавлен после модерации</h5>
+            <div class="flex items-center flex-col top-[50%] left-[50%] absolute translate-x-[-50%] translate-y-[-50%] w-[100%] px-[16px]">
+                <h5 class="inline-block text-[24px] text-center mb-[20px] sm:w-[460px]">Мы рады что вы оставили свой отзыв, он будет добавлен после модерации</h5>
                 <div class="inline-block text-[#C08267] border-2 border-solid border-[#C08267] text-[16px] py-[10px] px-[40px] w-fit cursor-pointer close_modal_window_send_review_ok">
                     Хорошо
                 </div>
@@ -73,7 +73,7 @@
             </div>
         </div>
         <div class="fixed z-[100]">
-            <button class="fixed top-[20px] right-[20px] cursor-pointer but_close_slider oneclick_close_slider"><img src="{% static 'photo_galirey/img/close_icon_fff.svg' %}" alt=""/></button>
+            <button class="fixed top-[20px] right-[20px] cursor-pointer but_close_slider"><img src="{% static 'photo_galirey/img/close_icon_fff.svg' %}" alt=""/></button>
             <div class="fixed top-[20px] left-[20px] text-[#fff]">
                 <span id="indicator_index_activ">1</span>/<span id="indicator_index_length"></span>
             </div>

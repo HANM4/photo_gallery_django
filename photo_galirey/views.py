@@ -119,7 +119,7 @@ def index(request):
 
 
 def gallery(request):
-    paginator = Paginator(gallery_db, 4)
+    paginator = Paginator(gallery_db, 6)
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
@@ -199,7 +199,7 @@ def show_hashtags(request, hashtags_id):
 
     hashtags = hashtags_db.filter(hashtag=hashtags_id)
 
-    paginator = Paginator(hashtags, 4)
+    paginator = Paginator(hashtags, 6)
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)

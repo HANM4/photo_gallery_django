@@ -1,6 +1,6 @@
 {% load static %}
 {% include 'photo_galirey/header.html' %}
-<section class="px-[30px] pt-[60px] pb-[60px] mx-auto max-w-7xl md:px-2">
+<section class="px-[16px] sm:px-[30px] pt-[60px] pb-[60px] mx-auto max-w-7xl md:px-2">
     <div class="mb-[60px]">
         <div>
             <h3 class="text-[36px] text-[#C08267]">{{ review_int.name_reviewer }}</h3>
@@ -19,7 +19,7 @@
     <div class="mb-[60px]">{{ review_int.review|linebreaksbr|linebreaks }}</div>
     <div>
         <h4 class="mb-[25px] text-[25px]">Фотграфии сделаные для клиента</h4>
-        <div  class="overflow-hidden group relative h-[300px] w-[600px]">
+        <div  class="overflow-hidden group relative h-[300px] w-[100%] sm:w-[600px]">
             <a href="{{ review_int.gallery.get_absolute_url }}">
                 <img src="{{ review_int.gallery.img_background_work.url}}" class="object-cover h-[300px] w-[600px]" alt=""/>
                 <div class="absolute px-4 pt-2.5 flex flex-col bottom-[0] bg-white w-[100%]">

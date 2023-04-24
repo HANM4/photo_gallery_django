@@ -7,11 +7,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Dancing+Script:wght@700&family=Yeseva+One&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
     <title>{{ menu_activ }}</title>
 </head>
-<body>
-<header class="bg-cover bg-right pb-[7rem] h-[100vh] flex flex-col justify-between text-white" style="background-image: url('{% static 'photo_galirey/img/background_image_header_index.png' %}')">
-    <div class="flex pt-[45px] pb-[20px] px-[40px] justify-between w-full">
+<body class="overflow-x-scroll">
+<header class="bg-cover bg-right pb-[60px] min-h-[100vh] flex flex-col justify-between text-white" style="background-image: url('{% static 'photo_galirey/img/background_image_header_index-min.png' %}')">
+    <div class="flex pt-[45px] pb-[20px] px-[16px] sm:px-[40px] justify-between w-full">
         <a class="font-medium cursor-pointer" href="{% url 'home' %}">
             <span class="text-[25px] font-italictext">Disipion Salinia</span>
         </a>
@@ -30,33 +31,11 @@
             <div class="w-[25px] h-[3px] bg-[#ffffff] rounded-[2px]"></div>
         </nav>
     </div>
-    <div class="bg-black flex flex-col px-10 py-11 w-[100%] lg:w-[650px] bg-opacity-[.73] text-white  items-center lg:items-start">
+    <div class="bg-black flex flex-col px-[16px] sm:px-[40px] py-[44px] w-[100%] lg:w-[650px] bg-opacity-[.73] text-white  items-center lg:items-start">
         <h2 class="text-5xl text-center lg:text-start">Заказать фотографа</h2>
-        <div class="mt-6 mb-[21px] opacity-[.85] text-center lg:text-start">Авным образом начало повседневной работы по формированию позиции способствует подготовки и реализации направлений</div>
+        <div class="mt-[24px] mb-[21px] opacity-[.85] text-center lg:text-start">Если вы хотите сохранить воспоминания о каком-то важном событии в своей жизни, то заказ фотографа может быть отличным решением. Фотограф поможет запечатлеть на фотографиях каждый момент вашего мероприятия, создавая незабываемые кадры, которые останутся с вами навсегда.</div>
         <button class="w-fit rounded-[2px] text-[20px] border-[1px] border-[#C08267] text-[#C08267] px-[21px] py-[5px] hover:text-white hover:bg-[#C08267] button_scroll_service">Заказать</button>
     </div>
 </header>
-<div id="modal_window_menu" class="hidden">
-    <div class="bg-[#69605A] bg-opacity-[.50] backdrop-blur-[10px] z-[100] h-[100%] w-[60%] top-0 left-0  fixed close_modal_window_menu"></div>
-    <div class="bg-[#69605A] backdrop-blur-[10px] h-[100%] w-[40%] z-[100] fixed top-0 right-0 text-white">
-        <div class="top-[45px] right-[40px] absolute w-[17px] h-[17px] cursor-pointer close_modal_window_menu">
-            <div class="bg-[#fff] h-[3px] w-[25px] absolute rotate-[45deg] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-[2px]"></div>
-            <div class="bg-[#fff] h-[3px] w-[25px] absolute rotate-[-45deg] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-[2px]"></div>
-        </div>
-        <div class="flex flex-col items-center mt-[100px] ">
-            <a class="font-medium cursor-pointer close_modal_window_menu" href="{% url 'home' %}">
-                <span class="text-[25px] font-italictext">Disipion Salinia</span>
-            </a>
-            <nav class="flex flex-col items-center justify-between w-[30%] w-fit">
-                {% for key, val in menu.items %}
-                    {% if menu_activ == key %}
-                        <a href="{% url val %}" class="cursor-pointer border-b-2 border-white mt-[20px] close_modal_window_menu">{{ key }}</a>
-                    {% else %}
-                        <a href="{% url val %}" class="cursor-pointer hover:opacity-[.80] mt-[20px] close_modal_window_menu">{{ key }}</a>
-                    {% endif %}
-                {% endfor %}
-            </nav>
-        </div>
-    </div>
-</div>
+{% include  'photo_galirey/modal_window_menu.html' %}
 

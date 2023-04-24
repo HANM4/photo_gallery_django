@@ -1,13 +1,13 @@
 {% load static %}
 <footer class="">
     <div class=" w-full bg-cover bg-center"
-         style="background-image: url({% static 'photo_galirey/img/background_image_footer.png' %})">
-        <div class="pb-24 pt-[50px] mx-auto max-w-7xl justify-between flex flex-col px-[30px]">
+         style="background-image: url({% static 'photo_galirey/img/background_image_footer-min.png' %})">
+        <div class="pb-[40px] pt-[50px] mx-auto max-w-7xl justify-between flex flex-col px-[16px] sm:px-[30px]">
             <a class="inline-block font-medium cursor-pointer mb-[20px]" href="{% url 'home' %}">
                 <span class="text-[25px] font-italictext">Disipion Salinia</span>
             </a>
-            <div class="flex justify-between">
-                <div>
+            <div class="flex  flex-col sm:flex-row justify-between">
+                <div class="mb-[20px]">
                     <span class="font-semibold text-lg mb-3 block">Меню</span>
                     <ul>
                         {% for key, val in menu.items %}
@@ -17,7 +17,7 @@
                         {% endfor %}
                     </ul>
                 </div>
-                <div>
+                <div class="mb-[20px]">
                     <span class="block font-semibold text-lg mb-3">Контакты</span>
                     <div class="flex mb-2">
                         <img src="{% static 'photo_galirey/img/phone_icon.svg' %}" alt="телефон" class="pr-2">
@@ -38,25 +38,25 @@
                 </div>
                 <div>
                     <span class="font-semibold text-lg mb-3 block">Социальные сети</span>
-                    <div class="flex mb-2 justify-between lg:justify-start">
+                    <div class="flex mb-2 sm:justify-between lg:justify-start">
                         <a href=""><img src="{% static 'photo_galirey/img/vk_contact_icon.svg' %}" alt="vk" class="pr-2 min-w-[44px] min-h-[44px] lg:w-0 lg:h-0"></a>
                         <a href=""><img src="{% static 'photo_galirey/img/facebook_contact_icon.svg' %}" alt="facebook" class="pr-2 min-w-[44px] min-h-[44px] lg:w-0 lg:h-0"></a>
                         <a href=""><img src="{% static 'photo_galirey/img/inst_contact_icon.svg' %}" alt="inst" class="lg:hidden min-w-[44px] min-h-[44px] lg:w-0 lg:h-0"></a>
                     </div>
                     <a href="" class="hidden lg:inline-block"><span>@dmitrirocit</span></a>
                     <div class="hidden lg:grid grid-cols-3 ">
-                        <a href=""><img src="{% static 'photo_galirey/img/inst_img_1.png' %}" alt="пост из instagram 1"></a>
-                        <a href=""><img src="{% static 'photo_galirey/img/inst_img_2.png' %}" alt="пост из instagram 2"></a>
-                        <a href=""><img src="{% static 'photo_galirey/img/inst_img_3.png' %}" alt="пост из instagram 3"></a>
-                        <a href=""><img src="{% static 'photo_galirey/img/inst_img_4.png' %}" alt="пост из instagram 4"></a>
-                        <a href=""><img src="{% static 'photo_galirey/img/inst_img_5.png' %}" alt="пост из instagram 5"></a>
-                        <a href=""><img src="{% static 'photo_galirey/img/inst_img_6.png' %}" alt="пост из instagram 6"></a>
+                        <a href=""><img src="{% static 'photo_galirey/img/inst_img_1-min.png' %}" alt="пост из instagram 1"></a>
+                        <a href=""><img src="{% static 'photo_galirey/img/inst_img_2-min.png' %}" alt="пост из instagram 2"></a>
+                        <a href=""><img src="{% static 'photo_galirey/img/inst_img_3-min.png' %}" alt="пост из instagram 3"></a>
+                        <a href=""><img src="{% static 'photo_galirey/img/inst_img_4-min.png' %}" alt="пост из instagram 4"></a>
+                        <a href=""><img src="{% static 'photo_galirey/img/inst_img_5-min.png' %}" alt="пост из instagram 5"></a>
+                        <a href=""><img src="{% static 'photo_galirey/img/inst_img_6-min.png' %}" alt="пост из instagram 6"></a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="bg-black/[.50]">
-            <div class=" text-white flex flex-col py-5 px-[30px] w-fit m-auto">
+            <div class=" text-white flex flex-col py-5 px-[16px] sm:px-[30px] w-fit m-auto">
                 <h2 class="text-xl mb-2 w-fit">Заказать звонок</h2>
                 <div class="flex flex-col lg:flex-row max-w-[800px]">
                     <div class="mr-[20px] mb-[15px]">
@@ -70,7 +70,7 @@
             </div>
         </div>
     </div>
-    <div class="flex my-3 px-5 justify-center text-black">
+    <div class="flex my-3 px-[16px] sm:px-[30px] justify-center text-black">
         <p class=" text-sm text-center">Сайт создан pannnikof.ru dmitrirocit © 2020 Все права защищены</p>
     </div>
 

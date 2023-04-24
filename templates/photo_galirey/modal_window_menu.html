@@ -1,0 +1,23 @@
+<div id="modal_window_menu" class="hidden">
+    <div class="bg-[#69605A] bg-opacity-[.50] backdrop-blur-[10px] z-[100] h-[100%] w-[60%] top-0 left-0  fixed close_modal_window_menu"></div>
+    <div class="bg-[#69605A] backdrop-blur-[10px] h-[100%] w-[100%] sm:w-[40%] z-[100] fixed top-0 right-0 text-white">
+        <div class="top-[45px] right-[40px] absolute w-[17px] h-[17px] cursor-pointer close_modal_window_menu">
+            <div class="bg-[#fff] h-[3px] w-[25px] absolute rotate-[45deg] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-[2px]"></div>
+            <div class="bg-[#fff] h-[3px] w-[25px] absolute rotate-[-45deg] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-[2px]"></div>
+        </div>
+        <div class="flex flex-col items-center mt-[100px] ">
+            <a class="font-medium cursor-pointer close_modal_window_menu" href="{% url 'home' %}">
+                <span class="text-[25px] font-italictext">Disipion Salinia</span>
+            </a>
+            <nav class="flex flex-col items-center justify-between w-[30%] w-fit">
+                {% for key, val in menu.items %}
+                    {% if menu_activ == key %}
+                        <a href="{% url val %}" class="cursor-pointer border-b-2 border-white mt-[20px] close_modal_window_menu">{{ key }}</a>
+                    {% else %}
+                        <a href="{% url val %}" class="cursor-pointer hover:opacity-[.80] mt-[20px] close_modal_window_menu">{{ key }}</a>
+                    {% endif %}
+                {% endfor %}
+            </nav>
+        </div>
+    </div>
+</div>
